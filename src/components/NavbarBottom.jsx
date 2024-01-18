@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
-import { register } from "swiper/element/bundle"
+import { register } from "swiper/element/bundle";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { BsSearch } from "react-icons/bs";
+import Images from "../assests"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -48,7 +49,7 @@ const menuItems = [
     ],
   },
   {
-    title: "Locale",
+    title: "Local news",
     link: "/",
     subMenu: [
       {
@@ -84,7 +85,7 @@ const menuItems = [
     ],
   },
   {
-    title: "Finances Enterprises",
+    title: "Business & Finance",
     link: "/",
     subMenu: [
       {
@@ -120,7 +121,7 @@ const menuItems = [
     ],
   },
   {
-    title: "Societe",
+    title: "Society",
     link: "/",
     subMenu: [
       {
@@ -332,7 +333,7 @@ const MenuItem = ({ title, link, subMenu }) => {
   const handleSubMenuTitleHover = (index) => {
     setHoveredSubMenuIndex(index === hoveredSubMenuIndex ? null : index);
   };
-  
+
   return (
     <li
       className="relative group"
@@ -340,7 +341,7 @@ const MenuItem = ({ title, link, subMenu }) => {
       onMouseLeave={handleToggleSubMenu}
     >
       <div
-        className={`block text-center px-1 text-gray-900 rounded ${
+        className={`block uppercase text-center text-gray-900 rounded ${
           subMenuItems.length > 0
             ? "cursor-pointer"
             : "group-hover:bg-gray-100 md:border-0 md:group-hover:text-black"
@@ -351,14 +352,15 @@ const MenuItem = ({ title, link, subMenu }) => {
       >
         <Link to={link}>{title}</Link>
         {subMenuItems.length > 0 && (
-          <FiChevronDown className="w-4 h-4 ml-2 inline-block" />
+          <FiChevronDown className="w-4 h-4 ml-1 inline-block" />
         )}
       </div>
 
       {subMenuItems.length > 0 && isSubMenuOpen && (
-        <ul className="absolute flex left-0 top-full z-20">
+        <ul className="absolute flex left-0 top-full ">
           {subMenuItems.map((subItem, index) => (
-            <Swiper width="100%"
+            <Swiper
+              width="100%"
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={2}
               slidesPerView={2}
@@ -367,17 +369,17 @@ const MenuItem = ({ title, link, subMenu }) => {
               scrollbar={{ draggable: true }}
             >
               <SwiperSlide key={subItem.title}>
-                  <SubMenuItem
-                    title={subItem.title}
-                    link={subItem.link}
-                    subSubMenu={subItem.subSubMenu}
-                    postDate={subItem.postDate}
-                    imgPostLink={subItem.imgPostLink}
-                    subTitle={subItem.subTitle}
-                    onMouseEnter={() => handleSubMenuTitleHover(index + 1)}
-                    onMouseLeave={() => handleSubMenuTitleHover(null)}
-                    onClick={() => handleSubMenuTitleHover(index + 1)}
-                  />
+                <SubMenuItem
+                  title={subItem.title}
+                  link={subItem.link}
+                  subSubMenu={subItem.subSubMenu}
+                  postDate={subItem.postDate}
+                  imgPostLink={subItem.imgPostLink}
+                  subTitle={subItem.subTitle}
+                  onMouseEnter={() => handleSubMenuTitleHover(index + 1)}
+                  onMouseLeave={() => handleSubMenuTitleHover(null)}
+                  onClick={() => handleSubMenuTitleHover(index + 1)}
+                />
               </SwiperSlide>{" "}
             </Swiper>
           ))}
@@ -388,12 +390,36 @@ const MenuItem = ({ title, link, subMenu }) => {
 };
 
 const NavbarBottom = () => {
-     
+ const [isScrolled, setIsScrolled] = useState(false);
+
+ useEffect(() => {
+   const handleScroll = () => {
+     setIsScrolled(window.scrollY > 180);
+   };
+
+   window.addEventListener("scroll", handleScroll);
+
+   return () => {
+     window.removeEventListener("scroll", handleScroll);
+   };
+ }, []);
   return (
-    <nav className="bg-white border-gray-200">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div className="hidden md:block"> 
-          <ul className="flex font-bold space-x-4">
+    <nav
+      className={`bg-white border-gray-200 transition-all ${
+        isScrolled ? "fixed top-0 left-0 w-full py-2 shadow-md z-50" : "py-4"
+      }`}
+    >
+      <div className="max-w-screen-xl ml-[5%]">
+        <div className="flex justify-between items-center">
+          <img
+            className={`logo w-32 transition-opacity ${
+              isScrolled ? "opacity-100" : "hidden opacity-0"
+            }`}
+            src={Images.Logo}
+            alt=""
+          />
+
+          <ul className="flex  font-bold space-x-7">
             {menuItems.map((item) => (
               <MenuItem
                 key={item.title}
@@ -403,6 +429,10 @@ const NavbarBottom = () => {
               />
             ))}
           </ul>
+
+          <div className="">
+            <BsSearch />
+          </div>
         </div>
       </div>
     </nav>

@@ -44,7 +44,7 @@ const Sports = () => {
       <div className="flex gap-5">
         <div className="w-[40%]  ">
           <div>
-            <div className="relative z-10 -mt-9 w-full h-full">
+            <div className="relative  -mt-9 w-full h-full">
               <img
                 src={Image.samuel}
                 alt="fingerprint recognition"
