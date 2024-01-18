@@ -12,7 +12,6 @@ function App() {
           path="/"
           element={
             <React.Fragment>
-              <NavBar />
               <LandingPage />
               <Footer />
             </React.Fragment>
