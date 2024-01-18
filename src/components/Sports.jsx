@@ -43,15 +43,18 @@ const Sports = () => {
       </div>
       <div className="flex gap-5">
         <div className="w-[40%]  ">
-          <div className="relative   pt-10 w-full h-full">
-            <img
-              src={Image.samuel}
-              alt="fingerprint recognition"
-              className="w-[90%]  mx-auto object-cover"
-            />
-            <div className="absolute bottom-0 left-0 bg-blue-500 text-white p-2">
-              <h1 className="font-semibold text-sm uppercase">Education</h1>
+          <div>
+            <div className="relative z-10 -mt-9 w-full h-full">
+              <img
+                src={Image.samuel}
+                alt="fingerprint recognition"
+                className="w-[90%] h-[500px] mx-auto object-cover"
+              />
+              <div className="absolute bottom-0 left-0 bg-blue-500 text-white ml-7 p-1">
+                <h1 className="font-semibold text-sm uppercase">Education</h1>
+              </div>
             </div>
+
             <h1 className="pl-7  font-bold text-3xl mt-3">
               Cycling : African Track
             </h1>

@@ -54,7 +54,7 @@ const Lastest = () => {
   
   return (
     <div>
-      <h4 className="">
+      <h4 className="ml-16">
         <span className="text-red-600 font-bold">Nouvelles</span>
         <div className="text-5xl text-gray-100 uppercase font-bold">Latest</div>
       </h4>
