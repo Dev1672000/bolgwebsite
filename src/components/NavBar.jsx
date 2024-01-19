@@ -110,16 +110,16 @@ const NavBar = () => {
           <FaLongArrowAltRight size={18} className="ml-1" />
         </div>
       </div>
-      <div className="mt-4 mx-5 flex justify-between items-center">
+      <div className=" p-5 flex justify-between items-center">
         <img
           src="https://lematinal.media/wp-content/uploads/2021/06/Le-Matinal-Header-Logo.png"
           alt=""
-          className="w-[16%] h-[10%]"
+          className="w-[15%] h-[10%]"
         />
         <img
           src="https://lematinal.media/wp-content/uploads/2023/10/Stop-Accident-Banner-Ad.png"
           alt=""
-          className="w-[55%]"
+          className="w-[50%]"
         />
       </div>
       <div className="mt-4 mx-2">

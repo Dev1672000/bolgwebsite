@@ -430,7 +430,13 @@ const NavbarBottom = () => {
             ))}
           </ul>
 
-          <div className="">
+          <div
+            className={` ${
+              isScrolled
+                ? "hidden"
+                : ""
+            }`}
+          >
             <BsSearch />
           </div>
         </div>

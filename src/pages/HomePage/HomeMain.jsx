@@ -4,9 +4,9 @@ const HomeMain = () => {
   return (
     <div className=" gap-7 lg:px-10 px-6 md:py-5">
       <div className="lg:flex  justify-center">
-        <div className="flex flex-col  gap-8 h-full lg:w-[40%]">
+        <div className="flex flex-col  gap-8 h-full lg:w-[50%]">
           <div>
-            <span className="bg-[#029fb2] text-[10px] text-white p-1">
+            <span className="bg-[#029fb2] uppercase text-[10px] text-white p-1">
               LOCALE
             </span>
             <p className="text-3xl font-bold">
@@ -25,7 +25,7 @@ const HomeMain = () => {
           </div>
         </div>
 
-        <div className="lg:ml-6 lg:mt-0 mt-7  gap-5 lg:w-[25%] w-full flex lg:flex-col sm:flex-row flex-col items-center ">
+        <div className="lg:ml-6 lg:mt-0 mt-7  gap-5 lg:w-[20%] w-full flex lg:flex-col sm:flex-row flex-col items-center ">
           <div className="">
             <a href="https://yourlink.com" target="_blank">
               <div className="relative overflow-hidden">
@@ -35,7 +35,9 @@ const HomeMain = () => {
                   className="h-44 w-full"
                 />
                 <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
-                  <h1 className="font-semibold text-xs uppercase">Education</h1>
+                  <h1 className="font-semibold text-[10px] uppercase">
+                    Education
+                  </h1>
                 </div>
               </div>
 
@@ -56,7 +58,9 @@ const HomeMain = () => {
                   className="h-44 w-full "
                 />
                 <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
-                  <h1 className="font-semibold text-xs uppercase">Education</h1>
+                  <h1 className="font-semibold text-[10px] uppercase">
+                    Education
+                  </h1>
                 </div>
               </div>
 
@@ -77,7 +81,9 @@ const HomeMain = () => {
                   className="h-44 w-full"
                 />
                 <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
-                  <h1 className="font-semibold text-xs uppercase">Education</h1>
+                  <h1 className="font-semibold text-[10px] uppercase">
+                    Education
+                  </h1>
                 </div>
               </div>
 
@@ -91,14 +97,14 @@ const HomeMain = () => {
           </div>
         </div>
 
-        <div className="flex mt-5 md:mt-0 md:mx-5 lg:w-[25%]  flex-col">
+        <div className="flex mt-5 md:mt-0 md:mx-5 lg:w-[23%]  flex-col">
           <div>
-            <h1 className="text-red-500 mb-5 text-[18px] font-bold">
-              Notre Choix
+            <h1 className="text-[#C80000] mb-5 text-[18px] font-bold">
+              Editor Picks
             </h1>
             <div className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center">
               <div className="space-y-2">
-                <p className="font-bold  hover:text-red-600">
+                <p className="font-bold  hover:text-[#C80000]">
                   5 Etapes Que Chaque PME En Ligne Peut Entreprendre Pour
                   Satisfaire Ses Clients
                 </p>
@@ -114,7 +120,7 @@ const HomeMain = () => {
             </div>
             <div className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center">
               <div className="space-y-2">
-                <p className="font-bold hover:text-red-600">
+                <p className="font-bold hover:text-[#C80000]">
                   5 Etapes Que Chaque PME En Ligne Peut Entreprendre Pour
                   Satisfaire Ses Clients
                 </p>
@@ -130,7 +136,7 @@ const HomeMain = () => {
             </div>
             <div className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center">
               <div className="space-y-2">
-                <p className="font-bold  hover:text-red-600">
+                <p className="font-bold  hover:text-[#C80000]">
                   5 Etapes Que Chaque PME En Ligne Peut Entreprendre Pour
                   Satisfaire Ses Clients
                 </p>
@@ -145,12 +151,12 @@ const HomeMain = () => {
               />
             </div>
             <div>
-              <h1 className="text-red-500 mb-5 text-[18px] font-bold">
-                Finances Et Entreprises
+              <h1 className="text-[#C80000] mb-5 text-[18px] font-bold">
+                Business & Finance
               </h1>
               <div className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center">
                 <div className="space-y-2">
-                  <p className="font-bold  hover:text-red-600">
+                  <p className="font-bold  hover:text-[#C80000]">
                     Les Inscriptions Au NPQEA 2024 En Cours
                   </p>
                   <p className="text-xs italic text-gray-600">
@@ -165,7 +171,7 @@ const HomeMain = () => {
               </div>
               <div className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center">
                 <div className="space-y-2">
-                  <p className="font-bold  hover:text-red-600">
+                  <p className="font-bold  hover:text-[#C80000]">
                     L’Académie Du Design Et De L’innovation Et Ciel Textile Ltd
                     S’associent Pour Stimuler L’industrie Textile
                   </p>
@@ -181,7 +187,7 @@ const HomeMain = () => {
               </div>
               <div className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center">
                 <div className="space-y-2">
-                  <p className="font-bold  hover:text-red-600">
+                  <p className="font-bold  hover:text-[#C80000]">
                     MCB Et UPI Célèbrent 15 Ans De Collaboration Fructueuse
                   </p>
                   <p className="text-xs italic text-gray-600">
@@ -196,7 +202,7 @@ const HomeMain = () => {
               </div>
               <div className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center">
                 <div className="space-y-2">
-                  <p className="font-bold  hover:text-red-600">
+                  <p className="font-bold  hover:text-[#C80000]">
                     Nouveau Directeur Pour Palmar Beach Hotel
                   </p>
                   <p className="text-xs italic text-gray-600">

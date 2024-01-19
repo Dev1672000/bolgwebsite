@@ -33,7 +33,7 @@ const Sports = () => {
     
    ];
   return (
-    <div className="mx-5">
+    <div className="mx-5 my-[5%]">
       <div className="bg-[#029fb2] text-white  p-16">
         <h1 className="text-6xl font-bold">World Of Sports</h1>
         <p>
@@ -50,8 +50,8 @@ const Sports = () => {
                 alt="fingerprint recognition"
                 className="w-[90%] h-[500px] mx-auto object-cover"
               />
-              <div className="absolute bottom-0 left-0 bg-blue-500 text-white ml-7 p-1">
-                <h1 className="font-semibold text-sm uppercase">Education</h1>
+              <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white ml-7 p-1">
+                <h1 className="font-semibold text-[10px] uppercase">Education</h1>
               </div>
             </div>
 
@@ -72,18 +72,18 @@ const Sports = () => {
               <div>
                 <div key={index} className="relative   w-full">
                   <img
-                    className="w-full h-56 object-cover"
+                    className="w-full h-44 object-cover"
                     src={item.imageUrl}
                     alt={item.title}
                   />
-                  <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-2">
-                    <h1 className="font-semibold text-sm uppercase">
+                  <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
+                    <h1 className="font-semibold text-[10px] uppercase">
                       {" "}
                       {item.title}
                     </h1>
                   </div>
                 </div>
-                <h1 className="text-gray-600 pl-2 font-semibold text-sm mt-3">
+                <h1 className=" pl-2 font-bold text-sm mt-3">
                   {item.description}
                 </h1>
                 <p className="text-gray-600 pl-2  text-sm mt-3">{item.date}</p>
