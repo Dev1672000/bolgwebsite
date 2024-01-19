@@ -1,22 +1,26 @@
 import React from "react";
-import Images from "../assests"; 
+import Images from "../assests";
 import { FaWhatsapp, FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 export default function App() {
   return (
-    <footer className="text-white text-center bg-[#222] lg:text-left">
-      <div className="container p-6">
-        <div className="flex justify-evenly">
-          {/* <!--First links section--> */}
+    <footer className="text-white text-center mx-auto  lg:text-left">
+      <div className="container p-6 bg-gradient-to-b from-[#493535] to-[#36353c]">
+        <div className="md:flex justify-evenly text-center items-center">
           <div className="mb-6 flex-shrink-0  max-w-md">
-            <h5 className="mb-5 font-bold  text-xl text-[#029fb2]">
-              A Propos De Nous
+            <h5 className="mb-5 font-bold text-center  text-xl text-[#029fb2]">
+              About Us
             </h5>
             <ul className="mb-0 list-none space-y-3">
               <li>
                 {" "}
-                <img src={Images.Logo} alt="Le Matinal Logo" width="300px" />
+                <img
+                  src={Images.Logo}
+                  alt="Le Matinal Logo"
+                  className="w-[300px] mx-auto"
+                 
+                />
               </li>
               <li>
                 <p className=" ">
@@ -42,10 +46,9 @@ export default function App() {
             </ul>
           </div>
 
-          {/* <!--Second links section--> */}
           <div className="mb-6 group  flex-shrink-0 max-w-md">
             <h5 className="mb-5 font-bold  text-xl text-[#029fb2]">
-              Liens Importants
+              Important Links
             </h5>
             <ul className="mb-0 list-none  space-y-7 text-[18px] font-bold">
               <li>
@@ -106,13 +109,12 @@ export default function App() {
             </div>
           </div>
 
-          {/* <!--Third links section--> */}
           <div className="mb-6 flex-shrink-0 max-w-md">
             <h5 className="mb-5 font-bold  text-xl text-[#029fb2]">
-              Notre Choix
+              Editor Picks
             </h5>
 
-            <ul className="mb-0 list-none space-y-7 text-[18px] font-bold">
+            <ul className="mb-0 list-none space-y-5 text-start text-[16px] md:text-[18px] font-bold">
               <li className="flex gap-2">
                 <div>
                   <a href="aaa" className=" hover:text-[#029fb2]">
@@ -136,7 +138,7 @@ export default function App() {
                     February 1, 2023
                   </p>
                 </div>
-              
+
                 <img src={Images.LeCode} alt="Logo" width="100px" />
               </li>
               <li className="flex gap-2">
@@ -159,11 +161,10 @@ export default function App() {
         </div>
       </div>
 
-      {/* <!--Copyright section--> */}
-      <div className="bg-black font-[500] p-2 text-center text-[#029fb2]">
+      <div className="bg-black font-[500] p-2 text-center md:text-[16px] text-[14px] text-[#029fb2]">
         Copyright ©
         <a className=" dark:text-neutral-400" href="https://tw-elements.com/">
-          Le Matinal Media. Tous Les Droits Sont Réservés.
+          Le Matinal Media. All Rights Reserved.
         </a>
       </div>
     </footer>

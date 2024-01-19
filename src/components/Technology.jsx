@@ -62,7 +62,7 @@ const Technology = () => {
      },
    ];
   return (
-    <div className="2xl:mx-auto 2xl:container my-[5%] gap-7 ">
+    <div className="2xl:mx-auto 2xl:container my-[5%] gap-7 mx-3 ">
       <div className="2xl:mx-auto flex md:flex-row flex-col 2xl:container  gap-7 lg:px-10 px-0">
         <div className="py-[2%] border-[1px] border-gray-100 px-2  md:w-[20%] ">
           <h1 className="text-[24px] mx-2 text-[#c80000]  font-[900] mb-5">
@@ -72,7 +72,11 @@ const Technology = () => {
             return (
               <div key={i}>
                 <div className="relative mx-2 overflow-hidden">
-                  <img src={item.img} alt="" className="object-cover " />
+                  <img
+                    src={item.img}
+                    alt=""
+                    className="object-cover h-40 w-full"
+                  />
                   <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                     <h1 className="font-semibold text-[10px] uppercase">
                       {item.tag}
@@ -99,7 +103,7 @@ const Technology = () => {
           <h1 className="text-[90px] text-[#f3f3f3] uppercase font-[700]">
             latest
           </h1>
-          <h1 className="text-[24px] text-[#c80000]  font-[900] pl-4 -mt-[8%]  text-xl">
+          <h1 className="text-[24px] text-[#c80000]  font-[900] pl-4 -mt-16 md:-mt-[8%]  text-xl">
             Entertainment Stories
           </h1>
           <div className=" gap-5 space-y-5">
@@ -115,7 +119,7 @@ const Technology = () => {
             </div>
 
             <div className=" p-2">
-              <p className="font-bold text-xl">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
@@ -134,7 +138,7 @@ const Technology = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-28 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -144,14 +148,14 @@ const Technology = () => {
             </div>
 
             <div className="border-t-[1px] p-2 ">
-              <p className="font-bold text-xl">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
               <span className="text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500 md:block hidden ">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -163,7 +167,7 @@ const Technology = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-28 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -173,14 +177,14 @@ const Technology = () => {
             </div>
 
             <div className="border-t-[1px] p-2 ">
-              <p className="font-bold text-xl">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
               <span className="text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500 md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -192,7 +196,7 @@ const Technology = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-28 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -202,14 +206,14 @@ const Technology = () => {
             </div>
 
             <div className="border-t-[1px] p-2 ">
-              <p className="font-bold text-xl">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
               <span className="text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500 md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -221,7 +225,7 @@ const Technology = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-28 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -231,14 +235,14 @@ const Technology = () => {
             </div>
 
             <div className="border-t-[1px] p-2">
-              <p className="font-bold text-xl">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
               <span className="text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500 md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...

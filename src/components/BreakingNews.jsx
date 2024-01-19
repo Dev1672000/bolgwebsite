@@ -29,18 +29,18 @@ const BreakingNews = () => {
       prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 1000,
+      delay: 100,
       disableOnInteraction: false,
     },
   };
 
   return (
-    <div className="mx-[20%] flex justify-center items-center gap-5 py-[2%]">
-      <div className="uppercase w-[40%] bg-[#c80000] text-[12px] text-center font-bold text-white p-2">
+    <div className=" mx-auto md:mx-[20%] flex md:flex-row flex-col justify-center items-center gap-5 py-[2%]">
+      <div className="uppercase  mx-auto md:w-[40%] bg-[#c80000] text-[12px] text-center font-bold text-white p-2">
         Breaking News
       </div>
-      <Swiper {...swiperParams} ref={swiperRef}>
-        <SwiperSlide>
+      <Swiper {...swiperParams} ref={swiperRef} >
+        <SwiperSlide >
           1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo,
           dolor?
         </SwiperSlide>
@@ -53,7 +53,7 @@ const BreakingNews = () => {
           dolor?
         </SwiperSlide>
       </Swiper>
-      <div className="text-[20px] text-[#029fb2] flex ">
+      <div className="text-[20px] text-[#029fb2] md:flex   hidden">
         <MdOutlineKeyboardArrowLeft
           onClick={() => swiperRef.current?.swiper.slidePrev()}
           className="border-[#029fb2] m-2 border-[1px] cursor-pointer"

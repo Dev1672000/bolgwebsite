@@ -33,18 +33,18 @@ const Sports = () => {
     
    ];
   return (
-    <div className="mx-5 my-[5%]">
-      <div className="bg-[#029fb2] text-white  p-16">
-        <h1 className="text-6xl font-bold">World Of Sports</h1>
+    <div className="md:mx-5 mx-2 my-[5%]">
+      <div className="bg-[#029fb2] px-4 py-9 text-cent  text-white  md:p-16">
+        <h1 className="md:text-6xl text-3xl font-bold">World Of Sports</h1>
         <p>
           Everything you need to know about the latest happenings from the world
           of sports.
         </p>
       </div>
-      <div className="flex gap-5">
-        <div className="w-[40%]  ">
+      <div className="md:flex gap-5">
+        <div className="md:w-[40%]  ">
           <div>
-            <div className="relative  -mt-9 w-full h-full">
+            <div className="relative -mt-5 md:-mt-9 w-full h-full">
               <img
                 src={Image.samuel}
                 alt="fingerprint recognition"
@@ -66,8 +66,8 @@ const Sports = () => {
             </p>
           </div>
         </div>
-        <div className="w-[60%] mt-5">
-          <div className="md:mb-12 px-0 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="md:w-[60%] mt-5">
+          <div className="md:mb-12 px-0 grid grid-cols-2 md:grid-cols-2 gap-4">
             {data.map((item, index) => (
               <div>
                 <div key={index} className="relative   w-full">

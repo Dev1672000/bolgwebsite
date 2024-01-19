@@ -95,11 +95,11 @@ const Sidebar = () => {
             );
           })}
         </div>
-        <div className="py-[2%] -mt-[7%] md:w-[55%] ">
+        <div className="py-[2%] px-[4%] md:px-0 md:-mt-[7%] w-full md:w-[55%] ">
           <h1 className="text-[90px] text-[#f3f3f3] uppercase font-[700]">
             latest
           </h1>
-          <h1 className="text-[24px] text-[#c80000]  font-[900] pl-4 -mt-[8%]  text-xl">
+          <h1 className="text-[24px] text-[#c80000]  font-[900] pl-4 -mt-[15%] md:-mt-[8%]  text-xl">
             News From Mauritius
           </h1>
           <div className="flex gap-5 space-y-5">
@@ -107,22 +107,22 @@ const Sidebar = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-20 md:h-52  object-cover"
               />
               <div className="absolute text-[10px] bottom-0 left-0 uppercase bg-[#029fb2] text-white p-1 ">
                 <h1 className="font-semibold  uppercase">Education</h1>
               </div>
             </div>
 
-            <div className="border-t-[1px] p-2 border-b-[1px]">
-              <p className="font-bold text-xl">
+            <div className="border-t-[1px] p-2 ">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
               <span className="text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500 md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -134,7 +134,7 @@ const Sidebar = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-20 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -143,15 +143,15 @@ const Sidebar = () => {
               </div>
             </div>
 
-            <div className="border-t-[1px] p-2 border-b-[1px]">
-              <p className="font-bold text-xl">
+            <div className="border-t-[1px] p-2">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
-              <span className="text-[14px] italic">
+              <span className=" text-[10px] md:text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500  md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -163,7 +163,7 @@ const Sidebar = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-20 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -172,15 +172,15 @@ const Sidebar = () => {
               </div>
             </div>
 
-            <div className="border-t-[1px] p-2 border-b-[1px]">
-              <p className="font-bold text-xl">
+            <div className="border-t-[1px] p-2 ">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
               <span className="text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500  md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -192,7 +192,7 @@ const Sidebar = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-20 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -201,15 +201,15 @@ const Sidebar = () => {
               </div>
             </div>
 
-            <div className="border-t-[1px] p-2 border-b-[1px]">
-              <p className="font-bold text-xl">
+            <div className="border-t-[1px] p-2 ">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
               <span className="text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500  md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -221,7 +221,7 @@ const Sidebar = () => {
               <img
                 src={Images.News1}
                 alt="fingerprint recognition"
-                className="w-full h-52 object-cover"
+                className="w-full h-20 md:h-52 object-cover"
               />
               <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                 <h1 className="font-semibold text-[10px] uppercase">
@@ -230,15 +230,15 @@ const Sidebar = () => {
               </div>
             </div>
 
-            <div className="border-t-[1px] p-2 border-b-[1px]">
-              <p className="font-bold text-xl">
+            <div className="border-t-[1px] p-2 ">
+              <p className="font-bold md:text-xl">
                 Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
                 Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
               </p>
-              <span className="text-[14px] italic">
+              <span className=" text-[10px] md:text-[14px] italic">
                 Staff - January 17, 2024
               </span>
-              <p className="text-gray-500">
+              <p className="text-gray-500  md:block hidden">
                 Le cyclone Belal a laissé des traces dans le pays et hier matin,
                 alors que les alertes cycloniques ont été levées par les
                 services...
@@ -246,8 +246,10 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-        <div className="py-[2%] border-[1px] border-gray-100 px-2   md:w-[25%] ">
-          <h1 className="text-[24px] px-2 text-[#c80000]  font-[900]">Society</h1>
+        <div className="py-[2%] border-[1px] border-gray-100 px-2 mx-[5%]  md:w-[25%] ">
+          <h1 className="text-[24px] px-2 text-[#c80000]  font-[900]">
+            Society
+          </h1>
           <div className="grid grid-cols-1  rounded-lg">
             {Img2.slice(0, itemsToShow).map((item, i) => {
               return (

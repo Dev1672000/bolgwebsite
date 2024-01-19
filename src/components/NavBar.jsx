@@ -51,7 +51,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className="flex flex-col text-white ">
+    <div className="md:flex flex-col text-white  hidden ">
       <div className="bg-black flex items-center p-1 px-5">
         <div className="flex items-center text-white font-semibold ">
           {isDaytime ? (

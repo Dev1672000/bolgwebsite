@@ -5,7 +5,7 @@ import NavbarBottom from '../../components/NavbarBottom'
 const NavBarComponents = () => {
   return (
     <div className='shadow-md'>
-      <NavBar/>
+      <NavBar />
       <NavbarBottom/>
     </div>
   )

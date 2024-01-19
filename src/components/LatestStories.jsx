@@ -87,17 +87,17 @@ const LatestStories = () => {
         <h1 className="text-[90px] text-[#f3f3f3] uppercase font-[700]">
           latest
         </h1>
-        <h1 className="text-[24px] text-[#c80000]  font-[900] pl-4 -mt-[4.5%]  text-xl">
+        <h1 className="text-[24px] text-[#c80000]  font-[900] pl-4 -mt-[15%] md:-mt-[4.5%]  text-xl">
           Stories
         </h1>
       </div>
       <div className="md:px-16 px-4 my-5 container mx-auto">
-        <div className=" px-0 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className=" px-0 grid grid-cols-2 md:grid-cols-3 gap-4">
           {data.map((item, index) => (
             <div>
               <div key={index} className="relative  py-3 w-full">
                 <img
-                  className="w-full h-56 object-cover"
+                  className="w-full md:h-56 object-cover"
                   src={item.imageUrl}
                   alt={item.title}
                 />
@@ -108,8 +108,8 @@ const LatestStories = () => {
                   </h1>
                 </div>
               </div>
-              <h1 className="  font-bold  mt-1">{item.description}</h1>
-              <p className="text-gray-600 pl-2  text-sm mt-1">{item.date}</p>
+              <h1 className="  font-bold md:text-[16px] text-[14px] mt-1">{item.description}</h1>
+              <p className="text-gray-600 md:pl-2  text-sm mt-1">{item.date}</p>
             </div>
           ))}
         </div>
