@@ -8,6 +8,7 @@ import BreakingNews from '../../components/BreakingNews'
 import Technology from '../../components/Technology'
 import LatestVideos from '../../components/LatestVideos';
 import Footer from "../../components/Footer"
+import ScrollToTop from '../../components/ScrollToTop';
 const Index = () => {
   return (
     <div className="">
@@ -17,6 +18,7 @@ const Index = () => {
       <Sidebar />
       <Sports />
       <Technology />
+      <ScrollToTop/>
       {/* <LatestVideos/> */}
       <LatestStories />
       <Footer/>
