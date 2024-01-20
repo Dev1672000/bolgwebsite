@@ -5,13 +5,13 @@ import HomeMain from './HomeMain'
 import NavBarComponents from './NavBarComponents'
 import Sports from '../../components/Sports'
 import BreakingNews from '../../components/BreakingNews'
-import Technology from '../../components/Technology'
+import Technology from '../../components/LatestTechnology'
 import LatestVideos from '../../components/LatestVideos';
 import Footer from "../../components/Footer"
 import ScrollToTop from '../../components/ScrollToTop';
 const Index = () => {
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <NavBarComponents />
       
       <HomeMain />

@@ -52,34 +52,34 @@ export default function App() {
             </h5>
             <ul className="mb-0 list-none  space-y-7 text-[18px] font-bold">
               <li>
-                <a href="aaa" className="hover:text-[#029fb2]">
+                <a href="." className="hover:text-[#029fb2]">
                   Contactez-nous
                 </a>
               </li>
               <li>
-                <a href="aaa" className=" hover:text-[#029fb2]">
+                <a href="." className=" hover:text-[#029fb2]">
                   Faire De La Publicité
                 </a>
               </li>
               <li>
-                <a href="aaa" className="hover:text-[#029fb2] ">
+                <a href="." className="hover:text-[#029fb2] ">
                   Politique Éditoriale
                 </a>
               </li>
               <li>
-                <a href="aaa" className="hover:text-[#029fb2] ">
+                <a href="." className="hover:text-[#029fb2] ">
                   Conditions D’Utilisation
                 </a>
               </li>
               <li>
-                <a href="aaa" className="hover:text-[#029fb2] ">
+                <a href="." className="hover:text-[#029fb2] ">
                   Politique De Confidentialité
                 </a>
               </li>
             </ul>
             <div>
               <div
-                href="aaa"
+                href="."
                 className="text-[#029fb2] mt-5 font-bold text-[24px] text-center "
               >
                 Suivez Nous
@@ -117,7 +117,7 @@ export default function App() {
             <ul className="mb-0 list-none space-y-5 text-start text-[16px] md:text-[18px] font-bold">
               <li className="flex gap-2">
                 <div>
-                  <a href="aaa" className=" hover:text-[#029fb2]">
+                  <a href="." className=" hover:text-[#029fb2]">
                     5 Etapes Que Chaque PME En Ligne Peut Entreprendre Pour
                     Satisfaire Ses Clients
                   </a>
@@ -130,7 +130,7 @@ export default function App() {
 
               <li className="flex gap-2">
                 <div>
-                  <a href="aaa" className="hover:text-[#029fb2] ">
+                  <a href="." className="hover:text-[#029fb2] ">
                     P. Alain Romaine : Le Code Noir : L’esclavage Gravé Dans La
                     Loi
                   </a>
@@ -143,7 +143,7 @@ export default function App() {
               </li>
               <li className="flex gap-2">
                 <div>
-                  <a href="aaa" className="hover:text-[#029fb2] ">
+                  <a href="." className="hover:text-[#029fb2] ">
                     Le Renminbi, Une Monnaie Qui Gagne Du Terrain !
                   </a>
                   <p className="text-[16px] font-normal italic">

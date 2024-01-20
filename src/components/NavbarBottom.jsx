@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
-import { register } from "swiper/element/bundle";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { BsSearch } from "react-icons/bs";
 import Images from "../assests";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+
 const menuItems = [
   {
     title: "Global",
@@ -299,7 +292,7 @@ const SubMenuItem = ({
     >
       <Link
         to={link}
-        className={`flex flex-col items-center justify-between p-2 text-gray-900 rounded `}
+        className={`flex flex-col items-center justify-between p-2  rounded `}
       >
         {" "}
         <div className="relative   w-full">
@@ -341,36 +334,25 @@ const MenuItem = ({ title, link, subMenu }) => {
       onMouseLeave={handleToggleSubMenu}
     >
       <div
-        className={`block uppercase text-center text-gray-900 rounded ${
+        className={`block uppercase text-center  rounded ${
           subMenuItems.length > 0
             ? "cursor-pointer"
-            : "group-hover:bg-gray-100 md:border-0 md:group-hover:text-black"
+            : ""
         }`}
         onMouseEnter={() => handleSubMenuTitleHover(1)}
         onMouseLeave={() => handleSubMenuTitleHover(null)}
         onClick={toggleSubMenu}
       >
-      
-      
-      
         <Link to={link}>{title}</Link>
         {subMenuItems.length > 0 && (
-          <FiChevronDown className="w-4 h-4 ml-1 inline-block" />
+          <FiChevronDown className="w-3 h-3 ml-1 inline-block" />
         )}
       </div>
       {subMenuItems.length > 0 && isSubMenuOpen && (
         <ul className="absolute p-5 z-50 bg-white shadow-lg flex left-0 top-full ">
           {subMenuItems.map((subItem, index) => (
-            <Swiper
-              width="100%"
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={2}
-              slidesPerView={2}
-              navigation
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-            >
-              <SwiperSlide key={subItem.title}>
+            <div key={subItem.title} className="w-[100%]">
+              
                 <SubMenuItem
                   title={subItem.title}
                   link={subItem.link}
@@ -382,8 +364,7 @@ const MenuItem = ({ title, link, subMenu }) => {
                   onMouseLeave={() => handleSubMenuTitleHover(null)}
                   onClick={() => handleSubMenuTitleHover(index + 1)}
                 />
-              </SwiperSlide>{" "}
-            </Swiper>
+            </div>
           ))}
         </ul>
       )}
