@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 export default function App() {
   return (
-    <footer className="text-white text-center w-[100vw]  mx-auto  lg:text-left">
+    <footer className="text-white text-center   mx-auto  lg:text-left">
       <div className=" p-6 bg-gradient-to-b from-[#493535] to-[#36353c]">
         <div className="md:flex justify-evenly text-center items-center">
           <div className="mb-6 flex-shrink-0  max-w-md">
