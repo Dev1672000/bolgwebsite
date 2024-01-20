@@ -350,6 +350,9 @@ const MenuItem = ({ title, link, subMenu }) => {
         onMouseLeave={() => handleSubMenuTitleHover(null)}
         onClick={toggleSubMenu}
       >
+      
+      
+      
         <Link to={link}>{title}</Link>
         {subMenuItems.length > 0 && (
           <FiChevronDown className="w-4 h-4 ml-1 inline-block" />
@@ -405,7 +408,7 @@ const NavbarBottom = () => {
   return (
     <nav
       className={`bg-white md:block hidden border-gray-200 transition-all ${
-        isScrolled ? "fixed top-0 left-0 w-full py-2 shadow-md z-50" : "py-4"
+        isScrolled ? "fixed top-0 left-0 w-[100vw] py-2 shadow-md z-50" : "py-4"
       }`}
     >
       <div className="max-w-screen-xl ml-[5%]">

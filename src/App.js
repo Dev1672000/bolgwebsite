@@ -13,7 +13,7 @@ function App() {
           element={
             <React.Fragment>
               <LandingPage />
-              <Footer />
+              {/* <Footer /> */}
             </React.Fragment>
           }
         />

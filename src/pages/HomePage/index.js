@@ -7,7 +7,7 @@ import Sports from '../../components/Sports'
 import BreakingNews from '../../components/BreakingNews'
 import Technology from '../../components/Technology'
 import LatestVideos from '../../components/LatestVideos';
-
+import Footer from "../../components/Footer"
 const Index = () => {
   return (
     <div className="">
@@ -19,6 +19,7 @@ const Index = () => {
       <Technology />
       {/* <LatestVideos/> */}
       <LatestStories />
+      <Footer/>
     </div>
   );
 }
