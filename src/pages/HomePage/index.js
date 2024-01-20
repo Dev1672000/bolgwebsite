@@ -12,12 +12,12 @@ const Index = () => {
   return (
     <div className="">
       <NavBarComponents />
-      <BreakingNews />
+      
       <HomeMain />
       <Sidebar />
       <Sports />
       <Technology />
-      <LatestVideos/>
+      {/* <LatestVideos/> */}
       <LatestStories />
     </div>
   );

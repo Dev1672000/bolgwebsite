@@ -5,9 +5,7 @@ import Images from "../assests";
 const Technology = () => {
   const [itemsToShow, setItemsToShow] = useState(10);
 
-  const loadMoreItems = () => {
-    setItemsToShow(itemsToShow + 10);
-  };
+  
   const Img = [
     {
       img: `news1.webp`,
@@ -191,35 +189,7 @@ const Technology = () => {
               </p>
             </div>
           </div>{" "}
-          <div className="flex gap-5 space-y-5">
-            <div className="relative pt-10 w-full h-full">
-              <img
-                src={Images.News1}
-                alt="fingerprint recognition"
-                className="w-full h-28 md:h-52 object-cover"
-              />
-              <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
-                <h1 className="font-semibold text-[10px] uppercase">
-                  Education
-                </h1>
-              </div>
-            </div>
-
-            <div className="border-t-[1px] p-2 ">
-              <p className="font-bold md:text-xl">
-                Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les
-                Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles
-              </p>
-              <span className="text-[14px] italic">
-                Staff - January 17, 2024
-              </span>
-              <p className="text-gray-500 md:block hidden">
-                Le cyclone Belal a laissé des traces dans le pays et hier matin,
-                alors que les alertes cycloniques ont été levées par les
-                services...
-              </p>
-            </div>
-          </div>
+         
           <div className="flex gap-5 space-y-5">
             <div className="relative pt-10 w-full h-full">
               <img

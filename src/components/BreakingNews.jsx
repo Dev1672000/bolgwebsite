@@ -23,19 +23,19 @@ const BreakingNews = () => {
     spaceBetween: 50,
     slidesPerView: 1,
     effect: "slide",
-    speed: 500,
+    // speed: 2500,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 100,
+      delay: 1000,
       disableOnInteraction: false,
     },
   };
 
   return (
-    <div className=" mx-auto md:mx-[20%] flex md:flex-row flex-col justify-center items-center gap-5 py-[2%]">
+    <div className=" mx-auto md:mx-[20%] flex  md:flex-row flex-col justify-center items-center gap-5 py-[2%]">
       <div className="uppercase  mx-auto md:w-[40%] bg-[#c80000] text-[12px] text-center font-bold text-white p-2">
         Breaking News
       </div>

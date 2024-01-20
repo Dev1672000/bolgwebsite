@@ -8,12 +8,14 @@ import {
   FaYoutube,
   FaLongArrowAltRight,
 } from "react-icons/fa";
-import { FaWhatsapp, FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import {
+  FaXTwitter,
+} from "react-icons/fa6";
 import { WiCloudy } from "react-icons/wi";
-import { HiSun, HiMoon } from "react-icons/hi";
+import { HiMoon } from "react-icons/hi";
 import axios from "axios";
 
-const NavBar = () => {
+const NavBarWeb = () => {
   const [temperature, setTemperature] = useState("");
   const currentDate = new Date();
   const hour = currentDate.getHours();
@@ -51,9 +53,9 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className="md:flex flex-col text-white  hidden ">
+    <div className="md:flex flex-col text-white hidden">
       <div className="bg-black flex items-center p-1 px-5">
-        <div className="flex items-center text-white font-semibold ">
+        <div className="flex items-center text-white font-semibold">
           {isDaytime ? (
             <WiCloudy size={25} color="white" className="text-white" />
           ) : (
@@ -79,25 +81,24 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="flex items-center text-white ml-auto gap-4">
-          <ul className="flex gap-3  justify-center">
+          <ul className="flex gap-3 justify-center">
             <li>
-              <a href="">
-                <FaFacebookF />
+              <a href="https://www.facebook.com/">
+                <FaFacebook />
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="https://www.instagram.com/">
                 <FaInstagram />
               </a>
             </li>
-
             <li>
-              <a href="">
+              <a href="https://twitter.com/">
                 <FaXTwitter />
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="https://www.youtube.com/">
                 <FaYoutube />
               </a>
             </li>
@@ -110,15 +111,15 @@ const NavBar = () => {
           <FaLongArrowAltRight size={18} className="ml-1" />
         </div>
       </div>
-      <div className=" p-5 flex justify-between items-center">
+      <div className="p-5 flex justify-between items-center">
         <img
           src="https://lematinal.media/wp-content/uploads/2021/06/Le-Matinal-Header-Logo.png"
-          alt=""
+          alt="Logo"
           className="w-[15%] h-[10%]"
         />
         <img
           src="https://lematinal.media/wp-content/uploads/2023/10/Stop-Accident-Banner-Ad.png"
-          alt=""
+          alt="Banner"
           className="w-[50%]"
         />
       </div>
@@ -129,4 +130,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBarWeb;
