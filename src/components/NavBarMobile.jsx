@@ -17,14 +17,21 @@ const NavBarMobile = () => {
   const [subtitleOpen, setSubtitleOpen] = useState({});
 
   const menuData = [
-    { title: "Global", subtitles: ["Subtitle 1", "Subtitle 2", "Subtitle 3"] },
-    { title: "Local news", subtitles: ["Subtitle A", "Subtitle B"] },
-    { title: "Business & Finance", subtitles: ["Subtitle A", "Subtitle B"] },
-    { title: "Society", subtitles: ["Subtitle A", "Subtitle B"] },
-    { title: "Sports", subtitles: ["Subtitle A", "Subtitle B"] },
-    { title: "Lifestyle", subtitles: ["Subtitle A", "Subtitle B"] },
-    { title: "Divertissement", subtitles: ["Subtitle A", "Subtitle B"] },
-    { title: "More", subtitles: ["Subtitle A", "Subtitle B"] },
+    { title: "Global", subtitles: ["World", "Indian Ocean Region"] },
+    { title: "Local news", subtitles: ["Politics ", "Press Briefing"] },
+    {
+      title: "Business & Finance",
+      subtitles: ["Business", "Economy", "Banking"],
+    },
+    { title: "Society", subtitles: ["Crime", "Legal","Health","Education"] },
+    { title: "Sports", subtitles: ["Horse Racing", "Football"] },
+    { title: "Lifestyle", subtitles: ["Arts", "Culture","Tourism"] },
+    { title: "Entertainment", subtitles: [""
+  ] },
+    { title: "Opinion", subtitles: ["", ""] },
+    { title: "Science & Technology", subtitles: ["", ""] },
+    { title: "Environment", subtitles: ["", ""] },
+    { title: "Read in French", subtitles: ["", ""] },
   ];
 
   const openPopupHandler = (title) => {
