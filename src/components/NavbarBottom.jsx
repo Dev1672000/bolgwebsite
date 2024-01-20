@@ -285,7 +285,7 @@ const SubMenuItem = ({
   const hasSubSubMenu = Array.isArray(subSubMenu) && subSubMenu.length > 0;
 
   return (
-    <li
+    <div
       className={`relative  group  ${
         hasSubSubMenu ? "group-hover:bg-gray-50" : ""
       } w-80 `}
@@ -308,7 +308,7 @@ const SubMenuItem = ({
         <h1>{title}</h1>
         <span className="text-[11px] italic">{postDate}</span>
       </Link>
-    </li>
+    </div>
   );
 };
 
@@ -328,16 +328,14 @@ const MenuItem = ({ title, link, subMenu }) => {
   };
 
   return (
-    <li
+    <div
       className="relative group"
       onMouseEnter={handleToggleSubMenu}
       onMouseLeave={handleToggleSubMenu}
     >
       <div
-        className={`block uppercase text-center  rounded ${
-          subMenuItems.length > 0
-            ? "cursor-pointer"
-            : ""
+        className={`block uppercase text-center rounded ${
+          subMenuItems.length > 0 ? "cursor-pointer" : ""
         }`}
         onMouseEnter={() => handleSubMenuTitleHover(1)}
         onMouseLeave={() => handleSubMenuTitleHover(null)}
@@ -349,10 +347,18 @@ const MenuItem = ({ title, link, subMenu }) => {
         )}
       </div>
       {subMenuItems.length > 0 && isSubMenuOpen && (
-        <ul className="absolute p-5 z-50 bg-white shadow-lg flex left-0 top-full ">
-          {subMenuItems.map((subItem, index) => (
-            <div key={subItem.title} className="w-[100%]">
-              
+        <div className="absolute bg-white shadow-xl z-50 flex left-0 top-full">
+          {/* Left Side Submenu */}
+          <div className="w-[5%] p-5 mt-5 bg-white">
+            <p>All</p>
+            <p>Political</p>
+            <p>Education</p>
+            <p>Local</p>
+          </div>
+          {/* Right Side Submenu */}
+          <ul className="w-[95%] flex p-5 ">
+            {subMenuItems.map((subItem, index) => (
+              <div key={subItem.title} className="w-[100%]">
                 <SubMenuItem
                   title={subItem.title}
                   link={subItem.link}
@@ -364,11 +370,12 @@ const MenuItem = ({ title, link, subMenu }) => {
                   onMouseLeave={() => handleSubMenuTitleHover(null)}
                   onClick={() => handleSubMenuTitleHover(index + 1)}
                 />
-            </div>
-          ))}
-        </ul>
+              </div>
+            ))}
+          </ul>
+        </div>
       )}
-    </li>
+    </div>
   );
 };
 
