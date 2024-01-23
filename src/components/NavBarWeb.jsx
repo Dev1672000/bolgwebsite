@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaApple,
   FaPlay,
   FaFacebook,
   FaInstagram,
-  FaTwitter,
   FaYoutube,
   FaLongArrowAltRight,
 } from "react-icons/fa";
@@ -83,30 +83,30 @@ const NavBarWeb = () => {
         <div className="flex items-center text-white ml-auto gap-4">
           <ul className="flex gap-3 justify-center">
             <li>
-              <a href="https://www.facebook.com/">
+              <Link to="https://www.facebook.com/">
                 <FaFacebook />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://www.instagram.com/">
+              <Link to="https://www.instagram.com/">
                 <FaInstagram />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://twitter.com/">
+              <Link to="https://twitter.com/">
                 <FaXTwitter />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="https://www.youtube.com/">
+              <Link to="https://www.youtube.com/">
                 <FaYoutube />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="flex text-[11px] justify-center items-center ml-7">
           <p>
-            <a href="https://lematinal.media/"> Read in French </a>
+            <Link to="https://lematinal.media/"> Read in French </Link>
           </p>
           <FaLongArrowAltRight size={18} className="ml-1" />
         </div>

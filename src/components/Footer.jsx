@@ -2,6 +2,7 @@ import React from "react";
 import Images from "../assests";
 import { FaWhatsapp, FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import { FaYoutube } from "react-icons/fa";
 export default function App() {
   return (
@@ -52,58 +53,57 @@ export default function App() {
             </h5>
             <ul className="mb-0 list-none  space-y-7 text-[18px] font-bold">
               <li>
-                <a href="." className="hover:text-[#029fb2]">
+                <Link to="/" className="hover:text-[#029fb2]">
                   Contactez-nous
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="." className=" hover:text-[#029fb2]">
+                <Link to="/" className=" hover:text-[#029fb2]">
                   Faire De La Publicité
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="." className="hover:text-[#029fb2] ">
+                <Link to="/" className="hover:text-[#029fb2] ">
                   Politique Éditoriale
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="." className="hover:text-[#029fb2] ">
+                <Link to="/" className="hover:text-[#029fb2] ">
                   Conditions D’Utilisation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="." className="hover:text-[#029fb2] ">
+                <Link to="/" className="hover:text-[#029fb2] ">
                   Politique De Confidentialité
-                </a>
+                </Link>
               </li>
             </ul>
             <div>
               <div
-                href="."
                 className="text-[#029fb2] mt-5 font-bold text-[24px] text-center "
               >
                 Suivez Nous
               </div>
               <ul className="flex gap-5 text-xl mt-5 justify-center">
                 <li>
-                  <a href="">
+                  <Link to="/">
                     <FaWhatsapp />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="">
+                  <Link to="/">
                     <FaFacebookF />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="">
+                  <Link to="/">
                     <FaXTwitter />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="">
+                  <Link to="/">
                     <FaYoutube />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -117,10 +117,10 @@ export default function App() {
             <ul className="mb-0 list-none space-y-5 text-start text-[16px] md:text-[18px] font-bold">
               <li className="flex gap-2">
                 <div>
-                  <a href="." className=" hover:text-[#029fb2]">
+                  <Link to="/" className=" hover:text-[#029fb2]">
                     5 Etapes Que Chaque PME En Ligne Peut Entreprendre Pour
                     Satisfaire Ses Clients
-                  </a>
+                  </Link>
                   <p className="text-[16px]  font-normal italic">
                     September 22, 2023
                   </p>
@@ -130,10 +130,10 @@ export default function App() {
 
               <li className="flex gap-2">
                 <div>
-                  <a href="." className="hover:text-[#029fb2] ">
+                  <Link to="/" className="hover:text-[#029fb2] ">
                     P. Alain Romaine : Le Code Noir : L’esclavage Gravé Dans La
                     Loi
-                  </a>
+                  </Link>
                   <p className="text-[16px] font-normal italic">
                     February 1, 2023
                   </p>
@@ -143,9 +143,9 @@ export default function App() {
               </li>
               <li className="flex gap-2">
                 <div>
-                  <a href="." className="hover:text-[#029fb2] ">
+                  <Link to="/" className="hover:text-[#029fb2] ">
                     Le Renminbi, Une Monnaie Qui Gagne Du Terrain !
-                  </a>
+                  </Link>
                   <p className="text-[16px] font-normal italic">
                     January 27, 2023
                   </p>
@@ -163,9 +163,9 @@ export default function App() {
 
       <div className="bg-black font-[500] p-2 text-center md:text-[16px] text-[14px] text-[#029fb2]">
         Copyright ©
-        <a className=" dark:text-neutral-400" href="https://tw-elements.com/">
+        <Link className=" dark:text-neutral-400" to="https://tw-elements.com/">
           Le Matinal Media. All Rights Reserved.
-        </a>
+        </Link>
       </div>
     </footer>
   );

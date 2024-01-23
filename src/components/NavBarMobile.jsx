@@ -13,7 +13,7 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
 const NavBarMobile = () => {
   const [open, setOpen] = useState(false);
-  const [activeTitle, setActiveTitle] = useState("");
+  // const [activeTitle, setActiveTitle] = useState("");
   const [subtitleOpen, setSubtitleOpen] = useState({});
 
   const menuData = [
@@ -35,7 +35,7 @@ const NavBarMobile = () => {
   ];
 
   const openPopupHandler = (title) => {
-    setActiveTitle(title);
+    // setActiveTitle(title);
     setSubtitleOpen((prevSubtitleOpen) => ({
       ...prevSubtitleOpen,
       [title]: !prevSubtitleOpen[title],

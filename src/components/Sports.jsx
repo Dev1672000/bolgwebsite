@@ -1,37 +1,135 @@
-import React from 'react'
-import Image from "../assests"
+import React, { useState, useEffect } from "react";
+// import Image from "../../assests";
+import axios from "axios";
+import { Link } from "react-router-dom";
 const Sports = () => {
-   const data = [
-     {
-       title: "locale",
-       date: "Staff - January 17, 2024",
-       description:
-         "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-       imageUrl: "news1.webp",
-     },
-     {
-       title: "locale",
-       date: "Staff - January 17, 2024",
-       description:
-         "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-       imageUrl: "news1.webp",
-     },
-     {
-       title: "locale",
-       date: "Staff - January 17, 2024",
-       description:
-         "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-       imageUrl: "news1.webp",
-     },
-     {
-       title: "locale",
-       date: "Staff - January 17, 2024",
-       description:
-         "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-       imageUrl: "news1.webp",
-     },
-    
-   ];
+  const [articles, setArticles] = useState([]);
+  const [articlesBusinessFinance, setArticlesBusinessFinance] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const fetchArticles = async () => {
+    try {
+      const articlesResponse = await axios.get(
+        `${process.env.REACT_APP_API_URL}/getLatestArticles`,
+        {
+          params: {
+            language: "english",
+            numOfArticles: 1,
+            skippedArticles: (currentPage - 1) * 10,
+          },
+        }
+      );
+
+      const articlesWithFormattedDate = await Promise.all(
+        articlesResponse.data.map(async (article) => {
+          const imageResponse = await axios.get(
+            `${process.env.REACT_APP_API_URL}/getImage`,
+            {
+              params: {
+                imageID: article.images[0],
+              },
+            }
+          );
+
+          const decodedImage = imageResponse.data.imageBase64;
+
+          // Format the publication date
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const date = new Date(article.publicationDate);
+          const formattedDate = date.toLocaleDateString("en-US", options);
+
+          return {
+            ...article,
+            decodedImage,
+            formattedDate: `${formattedDate}`,
+          };
+        })
+      );
+
+      setArticles(articlesWithFormattedDate);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+  };
+  const fetchArticlesBusinessFinance = async () => {
+    try {
+      const articlesResponse = await axios.get(
+        `${process.env.REACT_APP_API_URL}/getLatestArticles`,
+        {
+          params: {
+            language: "english",
+            numOfArticles: 4,
+            skippedArticles: (currentPage - 1) * 10,
+          },
+        }
+      );
+
+      const articlesWithFormattedDate = await Promise.all(
+        articlesResponse.data.map(async (article) => {
+          const imageResponse = await axios.get(
+            `${process.env.REACT_APP_API_URL}/getImage`,
+            {
+              params: {
+                imageID: article.images[0],
+              },
+            }
+          );
+
+          const decodedImage = imageResponse.data.imageBase64;
+
+          // Format the publication date
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const date = new Date(article.publicationDate);
+          const formattedDate = date.toLocaleDateString("en-US", options);
+
+          return {
+            ...article,
+            decodedImage,
+            formattedDate: `${formattedDate}`,
+          };
+        })
+      );
+
+      setArticlesBusinessFinance(articlesWithFormattedDate);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchArticles();
+    fetchArticlesBusinessFinance();
+  }, [currentPage]);
+  const data = [
+    {
+      title: "locale",
+      date: "Staff - January 17, 2024",
+      description:
+        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
+      imageUrl: "news1.webp",
+    },
+    {
+      title: "locale",
+      date: "Staff - January 17, 2024",
+      description:
+        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
+      imageUrl: "news1.webp",
+    },
+    {
+      title: "locale",
+      date: "Staff - January 17, 2024",
+      description:
+        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
+      imageUrl: "news1.webp",
+    },
+    {
+      title: "locale",
+      date: "Staff - January 17, 2024",
+      description:
+        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
+      imageUrl: "news1.webp",
+    },
+  ];
   return (
     <div className="md:mx-5 mx-2 my-[5%]">
       <div className="bg-[#029fb2] px-4 py-9 text-cent  text-white  md:p-16">
@@ -43,50 +141,63 @@ const Sports = () => {
       </div>
       <div className="md:flex gap-5">
         <div className="md:w-[40%]  ">
-          <div>
-            <div className="relative -mt-5 md:-mt-9 w-full h-full">
-              <img
-                src={Image.samuel}
-                alt="fingerprint recognition"
-                className="w-[90%] h-[500px] mx-auto object-cover"
-              />
-              <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white ml-7 p-1">
-                <h1 className="font-semibold text-[10px] uppercase">Education</h1>
+          {articles.map((article) => (
+            <div to={`/news/${article._id}`} key={article._id}>
+              <div className="relative -mt-5 md:-mt-9 w-full h-full">
+                {article.decodedImage && (
+                  <img
+                    src={`data:image/jpeg;base64,${article.decodedImage}`}
+                    alt={`Image ${article.filename}`}
+                    className="w-[90%] h-[500px] mx-auto object-cover"
+                  />
+                )}
+                <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white ml-7 p-1">
+                  <h1 className="font-semibold text-[10px] uppercase">
+                    {article.engCategories && article.engCategories[0]}
+                  </h1>
+                </div>
               </div>
-            </div>
 
-            <h1 className="pl-7  font-bold text-3xl mt-3">
-              Cycling : African Track
-            </h1>
-            <h1 className=" pl-7 font-bold text-3xl ">
-              Championships : Samuel Dupuy Rolls On Gold
-            </h1>
-            <p className="text-gray-600 pl-7  text-sm mt-3">
-              Staff -January 18, 2024
-            </p>
-          </div>
+              <h1 className="pl-7  font-bold text-3xl mt-3">
+                Cycling : African Track
+              </h1>
+              <h1 className=" pl-7 font-bold text-3xl ">
+                Championships : Samuel Dupuy Rolls On Gold
+              </h1>
+              <p className="text-gray-600 pl-7  text-sm mt-3">
+                {`${article.author} - ${article.formattedDate}`}
+              </p>
+            </div>
+          ))}
         </div>
         <div className="md:w-[60%] mt-5">
           <div className="md:mb-12 px-0 grid grid-cols-2 md:grid-cols-2 gap-4">
-            {data.map((item, index) => (
-              <div>
-                <div key={index} className="relative   w-full">
-                  <img
-                    className="w-full h-44 object-cover"
-                    src={item.imageUrl}
-                    alt={item.title}
-                  />
+            {" "}
+            {articlesBusinessFinance.map((article) => (
+              <div to={`/news/${article._id}`} key={article._id}>
+                <div className="relative   w-full">
+                  {" "}
+                  {article.decodedImage && (
+                    <img
+                      className="w-full h-44 object-cover"
+                      src={`data:image/jpeg;base64,${article.decodedImage}`}
+                      alt={`Image ${article.filename}`}
+                    />
+                  )}
                   <div className="absolute bottom-0 left-0 bg-[#029fb2] text-white p-1">
                     <h1 className="font-semibold text-[10px] uppercase">
                       {" "}
-                      {item.title}
+                      {article.engCategories && article.engCategories[0]}
                     </h1>
                   </div>
                 </div>
                 <h1 className=" pl-2 font-bold text-sm mt-3">
-                  {item.description}
+                  {article.engHeading}
                 </h1>
-                <p className="text-gray-600 pl-2  text-sm mt-3">{item.date}</p>
+                <p className="text-gray-600 pl-2  text-sm mt-3">
+                  {" "}
+                  {`${article.author} - ${article.formattedDate}`}
+                </p>
               </div>
             ))}
           </div>
@@ -94,6 +205,6 @@ const Sports = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Sports
+export default Sports;

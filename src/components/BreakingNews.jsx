@@ -1,14 +1,10 @@
 import React, { useRef } from "react";
 import SwiperCore from "swiper";
-import { useSwiper } from "swiper/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import {
   Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
   Autoplay,
 } from "swiper/modules";
 import {

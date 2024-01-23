@@ -1,7 +1,5 @@
 import "./App.css";
 import React from "react";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBarWeb";
 import LandingPage from "./pages/HomePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -13,6 +11,7 @@ function App() {
           element={
             <React.Fragment>
               <LandingPage />
+
               {/* <Footer /> */}
             </React.Fragment>
           }

@@ -8,7 +8,7 @@ import LeCode from "./Le-Code-Noir.webp";
 import samuel from "./Samuel-Dupuy.webp";
 import News1 from "./PM-Visits-Several-Regions-To-Oversee-Damage-Done-By-Cyclone-Belal.webp";
 
-export default {
+const assets = {
   Logo,
   Google,
   Playstore,
@@ -18,3 +18,5 @@ export default {
   News1,
   samuel,
 };
+
+export default assets;

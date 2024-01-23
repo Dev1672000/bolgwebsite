@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import { FiChevronDown, } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import Images from "../assests";
 
@@ -406,7 +406,7 @@ const NavbarBottom = () => {
               isScrolled ? "opacity-100" : "hidden opacity-0"
             }`}
             src={Images.Logo}
-            alt=""
+            alt="Logo"
           />
 
           <ul className="flex  font-bold space-x-7">
