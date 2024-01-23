@@ -287,7 +287,7 @@ const SubMenuItem = ({
   return (
     <div
       className={`relative  group  ${
-        hasSubSubMenu ? "group-hover:bg-gray-50" : ""
+        hasSubSubMenu ? "group-hover:bg-gray-50 fixed " : ""
       } w-80 `}
     >
       <Link
@@ -295,7 +295,7 @@ const SubMenuItem = ({
         className={`flex flex-col items-center justify-between p-2  rounded `}
       >
         {" "}
-        <div className="relative   w-full">
+        <div className="relative w-full">
           <img
             className="w-full h-40 object-cover"
             src={imgPostLink}

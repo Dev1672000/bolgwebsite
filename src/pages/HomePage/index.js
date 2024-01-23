@@ -8,11 +8,10 @@ import LatestTechnology from "../../components/LatestTechnology";
 import LatestVideos from "../../components/LatestVideos";
 import Footer from "../../components/Footer";
 import ScrollToTop from "../../components/ScrollToTop";
-import LocalNews from '../../pages/LocalNews';
 const Index = () => {
   return (
     <div className="overflow-hidden">
-      {/* <LocalNews /> */}
+    
       <NavBarComponents />
       <HomeMain />
       <Sidebar />
