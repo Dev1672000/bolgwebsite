@@ -12,9 +12,7 @@ const NavBarComponents = () => {
         <NavBar />
         <NavbarBottom />
       </div>
-      <div className="pt-[18%] md:pt-0">
-        <BreakingNews />
-      </div>
+     
     </div>
   );
 };

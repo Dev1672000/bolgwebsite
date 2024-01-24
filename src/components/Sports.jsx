@@ -100,36 +100,7 @@ const Sports = () => {
     fetchArticles();
     fetchArticlesBusinessFinance();
   }, [currentPage]);
-  const data = [
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-  ];
+
   return (
     <div className="md:mx-5 mx-2 my-[5%]">
       <div className="bg-[#029fb2] px-4 py-9 text-cent  text-white  md:p-16">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SwiperCore from "swiper";
@@ -89,51 +89,6 @@ const LatestStories = () => {
       disableOnInteraction: false,
     },
   };
-
-  const data = [
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-    {
-      title: "locale",
-      date: "Staff - January 17, 2024",
-      description:
-        "Le Premier Ministre Visite Plusieurs Régions Pour Evaluer Les Dégâts Causés Par Le Cyclone Belal Et Les Pluies Torrentielles",
-      imageUrl: "news1.webp",
-    },
-  ];
 
   return (
     <div>

@@ -2,115 +2,58 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 const Sidebar = () => {
-   const [articles, setArticles] = useState([]);
-   const [currentPage, setCurrentPage] = useState(1);
- 
+  const [articles, setArticles] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
-    const fetchArticles = async () => {
-      try {
-        const articlesResponse = await axios.get(
-          `${process.env.REACT_APP_API_URL}/getLatestArticles`,
-          {
-            params: {
-              language: "english",
-              numOfArticles: 4,
-              skippedArticles: (currentPage - 1) * 10,
-            },
-          }
-        );
+  const fetchArticles = async () => {
+    try {
+      const articlesResponse = await axios.get(
+        `${process.env.REACT_APP_API_URL}/getLatestArticles`,
+        {
+          params: {
+            language: "english",
+            numOfArticles: 4,
+            skippedArticles: (currentPage - 1) * 10,
+          },
+        }
+      );
 
-        const articlesWithFormattedDate = await Promise.all(
-          articlesResponse.data.map(async (article) => {
-            const imageResponse = await axios.get(
-              `${process.env.REACT_APP_API_URL}/getImage`,
-              {
-                params: {
-                  imageID: article.images[0],
-                },
-              }
-            );
+      const articlesWithFormattedDate = await Promise.all(
+        articlesResponse.data.map(async (article) => {
+          const imageResponse = await axios.get(
+            `${process.env.REACT_APP_API_URL}/getImage`,
+            {
+              params: {
+                imageID: article.images[0],
+              },
+            }
+          );
 
-            const decodedImage = imageResponse.data.imageBase64;
+          const decodedImage = imageResponse.data.imageBase64;
 
-            // Format the publication date
-            const options = { year: "numeric", month: "long", day: "numeric" };
-            const date = new Date(article.publicationDate);
-            const formattedDate = date.toLocaleDateString("en-US", options);
+          // Format the publication date
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const date = new Date(article.publicationDate);
+          const formattedDate = date.toLocaleDateString("en-US", options);
 
-            return {
-              ...article,
-              decodedImage,
-              formattedDate: `${formattedDate}`,
-            };
-          })
-        );
+          return {
+            ...article,
+            decodedImage,
+            formattedDate: `${formattedDate}`,
+          };
+        })
+      );
 
-        setArticles(articlesWithFormattedDate);
-      } catch (error) {
-        console.error("Error fetching articles:", error);
-      }
-    };
+      setArticles(articlesWithFormattedDate);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+  };
 
-    useEffect(() => {
-      fetchArticles();
-    }, [currentPage]);
+  useEffect(() => {
+    fetchArticles();
+  }, [currentPage]);
 
-
-
-  const Img = [
-    {
-      img: `news1.webp`,
-      tag: "Tonde",
-      date: "January 16, 2024",
-      link: "Le Pape François Accepte La Résistance À La Bénédiction Des Couples De Même Sexe Mais Déclare Que “Le Seigneur Bénit Tout Le Monde”",
-    },
-    {
-      img: "news1.webp",
-      tag: "Tonde",
-      date: "January 16, 2024",
-      link: "L’ONU Retirera Sa Mission De Paix Au Congo D’ici La Fin Décembre",
-    },
-    {
-      img: "news1.webp",
-      tag: "Tonde",
-      date: "January 16, 2024",
-      link: "Le Roi Frederik X Du Danemark Monte Sur Le Trône Après L’abdication De La Reine",
-    },
-    {
-      img: "news1.webp",
-      date: "January 16, 2024",
-      tag: "Tonde",
-      link: "Les Maldives Demandent À L’inde De Retirer Ses Troupes D’ici Au 15 Mars",
-    },
-  ];
-
-  const Img2 = [
-    {
-      img: "news1.webp",
-      link: "Pas De Classes Ce Mercredi, Les Crèches Seront Ouvertes",
-      date: "January 17, 2024",
-    },
-    {
-      img: "news1.webp",
-      link: "A Melrose : Un Condamné Meurt Par Asphyxia Dans Sa Cellule",
-      date: "January 17, 2024",
-    },
-    {
-      img: "news1.webp",
-      link: "Belal A Fait Une Deuxième Victime",
-      date: "January 17, 2024",
-    },
-    {
-      img: "news1.webp",
-      date: "January 17, 2024",
-      link: " Emporté Par Les Flots, Un Motocycliste Meurt Sur L’autoroute De Pailles Le Lundi Matin Du 15 Janvier",
-    },
-    {
-      img: "news1.webp",
-      date: "January 17, 2024",
-      link: "Le Premier Ministre Jugnauth Honore La Nouvelle Centenaire Mme Rookmabaye Kistnah",
-    },
-  ];
   return (
     <div className="2xl:mx-auto my-[5%] 2xl:container  gap-7 ">
       <div className="2xl:mx-auto flex md:flex-row flex-col 2xl:container  gap-7 lg:px-10 px-0">

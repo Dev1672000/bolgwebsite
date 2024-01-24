@@ -101,59 +101,6 @@ const LatestTechnology = () => {
     fetchArticlesEntertainmentStories();
   }, [currentPage]);
 
-  const Img = [
-    {
-      img: `news1.webp`,
-      tag: "Tonde",
-      date: "January 16, 2024",
-      link: "Le Pape François Accepte La Résistance À La Bénédiction Des Couples De Même Sexe Mais Déclare Que “Le Seigneur Bénit Tout Le Monde”",
-    },
-    {
-      img: "news1.webp",
-      tag: "Tonde",
-      date: "January 16, 2024",
-      link: "L’ONU Retirera Sa Mission De Paix Au Congo D’ici La Fin Décembre",
-    },
-    {
-      img: "news1.webp",
-      tag: "Tonde",
-      date: "January 16, 2024",
-      link: "Le Roi Frederik X Du Danemark Monte Sur Le Trône Après L’abdication De La Reine",
-    },
-    {
-      img: "news1.webp",
-      date: "January 16, 2024",
-      tag: "Tonde",
-      link: "Les Maldives Demandent À L’inde De Retirer Ses Troupes D’ici Au 15 Mars",
-    },
-  ];
-  const Img2 = [
-    {
-      img: "news1.webp",
-      link: "Pas De Classes Ce Mercredi, Les Crèches Seront Ouvertes",
-      date: "January 17, 2024",
-    },
-    {
-      img: "news1.webp",
-      link: "A Melrose : Un Condamné Meurt Par Asphyxia Dans Sa Cellule",
-      date: "January 17, 2024",
-    },
-    {
-      img: "news1.webp",
-      link: "Belal A Fait Une Deuxième Victime",
-      date: "January 17, 2024",
-    },
-    {
-      img: "news1.webp",
-      date: "January 17, 2024",
-      link: " Emporté Par Les Flots, Un Motocycliste Meurt Sur L’autoroute De Pailles Le Lundi Matin Du 15 Janvier",
-    },
-    {
-      img: "news1.webp",
-      date: "January 17, 2024",
-      link: "Le Premier Ministre Jugnauth Honore La Nouvelle Centenaire Mme Rookmabaye Kistnah",
-    },
-  ];
   return (
     <div className="2xl:mx-auto 2xl:container my-[5%] gap-7 mx-3 ">
       <div className="2xl:mx-auto flex md:flex-row flex-col 2xl:container  gap-7 lg:px-10 px-0">

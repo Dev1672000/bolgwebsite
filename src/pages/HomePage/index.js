@@ -8,11 +8,20 @@ import LatestTechnology from "../../components/LatestTechnology";
 import LatestVideos from "../../components/LatestVideos";
 import Footer from "../../components/Footer";
 import ScrollToTop from "../../components/ScrollToTop";
+import LocalNews from "../LocalNews/LocalNews";
+import BreakingNews from "../../components/BreakingNews";
+import CategorySports from "../Category";
+import ShowDetailedArticle from "../ShowDetailedArticles"
 const Index = () => {
   return (
     <div className="overflow-hidden">
-    
+      {/* <LocalNews/> */}
       <NavBarComponents />
+    {/* <ShowDetailedArticle/> */}
+      {/* <CategorySports/> */}
+      <div className="pt-[18%] md:pt-0">
+        <BreakingNews />
+      </div>
       <HomeMain />
       <Sidebar />
 

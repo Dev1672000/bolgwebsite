@@ -3,59 +3,76 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
+
 const LocalNews = () => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [error, setError] = useState(null);
 
- const fetchArticles = async () => {
-   try {
-     const articlesResponse = await axios.get(
-       `${process.env.REACT_APP_API_URL}/getLatestArticles`,
-       {
-         params: {
-           language: "english",
-           numOfArticles: 10,
-           skippedArticles: (currentPage - 1) * 10,
-         },
-       }
-     );
+  const fetchArticles = async () => {
+    try {
+      const articlesResponse = await axios.get(
+        `${process.env.REACT_APP_API_URL}/getLatestArticles`,
+        {
+          params: {
+            language: "english",
+            numOfArticles: 10,
+            skippedArticles: (currentPage - 1) * 10,
+          },
+        }
+      );
 
-     const articlesWithFormattedDate = await Promise.all(
-       articlesResponse.data.map(async (article) => {
-         const imageResponse = await axios.get(
-           `${process.env.REACT_APP_API_URL}/getImage`,
-           {
-             params: {
-               imageID: article.images[0],
-             },
-           }
-         );
+      const imageIds = articlesResponse.data.map(
+        (article) => article.images[0]
+      );
 
-         const decodedImage = imageResponse.data.imageBase64;
+      if (imageIds.length === 0) {
+        setArticles([]);
+        return;
+      }
 
-         // Format the publication date
-         const options = { year: "numeric", month: "long", day: "numeric" };
-         const date = new Date(article.publicationDate);
-         const formattedDate = date.toLocaleDateString("en-US", options);
+      const imagesResponse = await axios.get(
+        `${process.env.REACT_APP_API_URL}/getImage`,
+        {
+          params: {
+            imageIds,
+          },
+        }
+      );
 
-         return {
-           ...article,
-           decodedImage,
-           formattedDate: `${formattedDate}`,
-         };
-       })
-     );
+      const imagesMap = imagesResponse.data.reduce((map, image) => {
+        map[image.imageID] = image.imageBase64;
+        return map;
+      }, {});
 
-     setArticles(articlesWithFormattedDate);
-   } catch (error) {
-     console.error("Error fetching articles:", error);
-   }
- };
+      const articlesWithFormattedDate = articlesResponse.data.map((article) => {
+        const decodedImage = imagesMap[article.images[0]];
 
- useEffect(() => {
-   // Call the fetchArticles function when the currentPage changes
-   fetchArticles();
- }, [currentPage]);
+        // Format the publication date
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        const date = new Date(article.publicationDate);
+        const formattedDate = date.toLocaleDateString("en-US", options);
+
+        return {
+          ...article,
+          decodedImage,
+          formattedDate: `${formattedDate}`,
+        };
+      });
+
+      setArticles(articlesWithFormattedDate);
+      setError(null);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+      setArticles([]);
+      setError("Error fetching articles. Please try again later.");
+    }
+  };
+
+  useEffect(() => {
+    // Call the fetchArticles function when the currentPage changes
+    fetchArticles();
+  }, [currentPage]);
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
@@ -69,6 +86,12 @@ const LocalNews = () => {
 
   return (
     <div className="container mx-auto p-4">
+      {error && (
+        <div className="text-red-500">
+          <p>{error}</p>
+        </div>
+      )}
+
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {articles.map((article) => (
           <Link to={`/news/${article._id}`} key={article._id}>
