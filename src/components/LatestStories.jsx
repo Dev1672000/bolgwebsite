@@ -22,7 +22,7 @@ const LatestStories = () => {
         {
           params: {
             language: "english",
-            numOfArticles: 100,
+            numOfArticles: 6,
             skippedArticles: (currentPage - 1) * 10,
           },
         }

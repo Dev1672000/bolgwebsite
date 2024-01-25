@@ -25,11 +25,11 @@ const LatestVideos = () => {
             title="YouTube video player"
             allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            muted // Set the video to be muted by default
+            muted 
           ></iframe>
         </div>
         <div className="">
-          <ul className="bg-black md:w-[80%] px-5 h-full space-y-4 text-white list-decimal p-4">
+          <ul className="bg-black md:w-[80%] px-5 h-full space-y-4 text-white list-decimal p-3">
             <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
               Rising waters submerge cars and cause traffic jam on the M1
               freeway in Port

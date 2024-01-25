@@ -145,7 +145,7 @@ const Sidebar = () => {
             </div>
           ))}
         </div>
-        <div className="py-[2%] border-[1px] border-gray-100 px-2 mx-[5%]  md:w-[25%] ">
+        <div className="py-[2%] border-[1px] border-gray-100 px-2  md:w-[25%] ">
           <h1 className="text-[24px] px-2 text-[#c80000]  font-[900]">
             Society
           </h1>

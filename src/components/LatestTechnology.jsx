@@ -4,6 +4,7 @@ import axios from "axios";
 
 const LatestTechnology = () => {
   const [articles, setArticles] = useState([]);
+  const [articles1, setArticles1] = useState([]);
   const [articlesEntnmntStories, setArticlesEntnmntStories] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -14,7 +15,7 @@ const LatestTechnology = () => {
         {
           params: {
             language: "english",
-            numOfArticles: 4,
+            numOfArticles: 5,
             skippedArticles: (currentPage - 1) * 10,
           },
         }
@@ -47,6 +48,50 @@ const LatestTechnology = () => {
       );
 
       setArticles(articlesWithFormattedDate);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+    }
+  };
+  const fetchArticles1 = async () => {
+    try {
+      const articlesResponse = await axios.get(
+        `${process.env.REACT_APP_API_URL}/getLatestArticles`,
+        {
+          params: {
+            language: "english",
+            numOfArticles: 3,
+            skippedArticles: (currentPage - 1) * 10,
+          },
+        }
+      );
+
+      const articlesWithFormattedDate = await Promise.all(
+        articlesResponse.data.map(async (article) => {
+          const imageResponse = await axios.get(
+            `${process.env.REACT_APP_API_URL}/getImage`,
+            {
+              params: {
+                imageID: article.images[0],
+              },
+            }
+          );
+
+          const decodedImage = imageResponse.data.imageBase64;
+
+          // Format the publication date
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const date = new Date(article.publicationDate);
+          const formattedDate = date.toLocaleDateString("en-US", options);
+
+          return {
+            ...article,
+            decodedImage,
+            formattedDate: `${formattedDate}`,
+          };
+        })
+      );
+      setArticles1(articlesWithFormattedDate);
+      
     } catch (error) {
       console.error("Error fetching articles:", error);
     }
@@ -98,6 +143,8 @@ const LatestTechnology = () => {
 
   useEffect(() => {
     fetchArticles();
+    fetchArticles1();
+
     fetchArticlesEntertainmentStories();
   }, [currentPage]);
 
@@ -179,7 +226,7 @@ const LatestTechnology = () => {
               </div>
             </div>
           ))}
-          {articles.map((article) => (
+          {articles1.map((article) => (
             <div
               to={`/news/${article._id}`}
               key={article._id}
