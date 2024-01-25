@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Image from "../../assests";
+import Image from "../assests";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const HomeMain = () => {
@@ -105,7 +105,7 @@ const HomeMain = () => {
       <div className="lg:flex  justify-center">
         {articles.map((article) => (
           <div className="flex flex-col  gap-8 h-full lg:w-[50%]">
-            <div>
+            <Link to={`/${article._id}`}>
               <span className="bg-[#029fb2] uppercase text-[10px] text-white p-1">
                 {article.engCategories && article.engCategories[0]}
               </span>
@@ -114,7 +114,7 @@ const HomeMain = () => {
                 {" "}
                 {`${article.author} - ${article.formattedDate}`}
               </span>
-            </div>
+            </Link>
             <div className="space-y-6 ">
               {article.decodedImage && (
                 <img

@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
-import LandingPage from "./pages/HomePage";
+import RoutingPage from "./Routing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <BrowserRouter>
@@ -10,8 +11,7 @@ function App() {
           path="/"
           element={
             <React.Fragment>
-              <LandingPage />
-
+              <RoutingPage />
               {/* <Footer /> */}
             </React.Fragment>
           }

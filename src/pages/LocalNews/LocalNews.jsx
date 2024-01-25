@@ -35,7 +35,7 @@ const LocalNews = () => {
         `${process.env.REACT_APP_API_URL}/getImage`,
         {
           params: {
-            imageIds,
+            imageID: articles.images[0],
           },
         }
       );

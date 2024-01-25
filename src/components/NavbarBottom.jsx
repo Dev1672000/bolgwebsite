@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiChevronDown, } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import Images from "../assests";
+import SearchArticles from "./SearchArticles"
 
 const menuItems = [
   {
@@ -347,7 +348,7 @@ const MenuItem = ({ title, link, subMenu }) => {
         )}
       </div>
       {subMenuItems.length > 0 && isSubMenuOpen && (
-        <div className="absolute bg-white shadow-xl z-50 flex left-0 top-full">
+        <div className="absolute bg-red-500 shadow-xl z-50 flex  ">
           {/* Left Side Submenu */}
           <div className="w-[5%] p-5 mt-5 bg-white">
             <p>All</p>
@@ -378,9 +379,14 @@ const MenuItem = ({ title, link, subMenu }) => {
     </div>
   );
 };
-
 const NavbarBottom = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = (searchQuery) => {
+    console.log("Search query:", searchQuery);
+    setSearchResults([]);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -393,6 +399,7 @@ const NavbarBottom = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <nav
       className={`bg-white md:block hidden border-gray-200 transition-all ${
@@ -409,7 +416,7 @@ const NavbarBottom = () => {
             alt="Logo"
           />
 
-          <ul className="flex  font-bold space-x-7">
+          <ul className="flex font-bold space-x-7">
             {menuItems.map((item) => (
               <MenuItem
                 key={item.title}
@@ -419,13 +426,13 @@ const NavbarBottom = () => {
               />
             ))}
           </ul>
+
           <div className={` ${isScrolled ? "hidden" : ""}`}>
-            <BsSearch />
+            <SearchArticles onSearch={handleSearch} />
           </div>
         </div>
       </div>
     </nav>
   );
 };
-
 export default NavbarBottom;

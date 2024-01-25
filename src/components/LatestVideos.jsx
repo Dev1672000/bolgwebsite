@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 const LatestVideos = () => {
-      const [selectedVideo, setSelectedVideo] = useState("yuSJbpXfv1I");
+  const [selectedVideo, setSelectedVideo] = useState("yuSJbpXfv1I");
 
-      const handleVideoClick = (videoId) => {
-        setSelectedVideo(videoId);
-      };
+  const handleVideoClick = (videoId) => {
+    setSelectedVideo(videoId);
+  };
+
   return (
     <div>
       <div className="md:ml-[11.5%] mx-5 my-[5%] ">
@@ -19,43 +20,45 @@ const LatestVideos = () => {
       <div className="md:mx-[12%] mx-5 md:flex justify-center items-center">
         <div className="">
           <iframe
-           
             className="md:w-[727px] md:h-[408px] h-80 w-full"
             src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
             title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
+            muted // Set the video to be muted by default
           ></iframe>
         </div>
         <div className="">
-        
-            <ul className="bg-black md:w-[80%] px-5 h-full space-y-4 text-white list-decimal p-4
-            "> 
-              <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
-                Rising waters submerge cars and cause traffic jam on the M1
-                freeway in Port
-              </li>
-              <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
-                Rising waters submerge cars and cause traffic jam on the M1
-                freeway in Port
-              </li>
-              <li onClick={() => handleVideoClick("sZwz5bcq_UA")}>
-                PM Jugnauth speaks on Cyclone Belal at the National Disaster
-                Risk Reduction and Management Centre
-              </li>
-              <li onClick={() => handleVideoClick("sZwz5bcq_UA")}>
-                PM Jugnauth speaks on Cyclone Belal at the National Disaster
-                Risk Reduction and Management Centre
-              </li>
-              <li onClick={() => handleVideoClick("sZwz5bcq_UA")}>
-                PM Jugnauth speaks on Cyclone Belal at the National Disaster
-                Risk Reduction and Management Centre
-              </li>
-            </ul>
+          <ul className="bg-black md:w-[80%] px-5 h-full space-y-4 text-white list-decimal p-4">
+            <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
+              Rising waters submerge cars and cause traffic jam on the M1
+              freeway in Port
+            </li>
+            <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
+              Rising waters submerge cars and cause traffic jam on the M1
+              freeway in Port
+            </li>
+            <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
+              Rising waters submerge cars and cause traffic jam on the M1
+              freeway in Port
+            </li>
+            <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
+              Rising waters submerge cars and cause traffic jam on the M1
+              freeway in Port
+            </li>
+            <li onClick={() => handleVideoClick("yuSJbpXfv1I")}>
+              Rising waters submerge cars and cause traffic jam on the M1
+              freeway in Port
+            </li>
+            <li onClick={() => handleVideoClick("sZwz5bcq_UA")}>
+              PM Jugnauth speaks on Cyclone Belal at the National Disaster Risk
+              Reduction and Management Centre
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default LatestVideos
+export default LatestVideos;

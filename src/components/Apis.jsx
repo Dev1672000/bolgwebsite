@@ -1,68 +1,104 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchArticles } from "../store/articlesSlice";
-const Sidebar = () => {
-  //  const dispatch = useDispatch();
-  //  const articles = useSelector((state) => state.articles.data);
-  //  const error = useSelector((state) => state.articles.error);
-  //  const currentPage = 1; // Assuming you want to fetch for currentPage 1 initially
 
-  //  useEffect(() => {
-  //    dispatch(fetchArticles(currentPage));
-  //  }, [dispatch, currentPage]);
-  const [articles, setArticles] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+const Apis = () => {
+     const [articles, setArticles] = useState([]);
+     const [currentPage, setCurrentPage] = useState(1);
+console.log("object",articles)
+     const fetchArticles = async () => {
+       try {
+         const articlesResponse = await axios.get(
+           `${process.env.REACT_APP_API_URL}/getLatestArticles`,
+           {
+             params: {
+               language: "english",
+               numOfArticles: 4,
+               skippedArticles: (currentPage - 1) * 10,
+             },
+           }
+         );
+         const articlesResponse2 = await axios.get(
+           `${process.env.REACT_APP_API_URL}/getCategoryArticles`,
+           {
+             params: {
+               language: "english",
+               numOfArticles: 4,
+               category: articles.engCategories,
+               skippedArticles: (currentPage - 1) * 10,
+             },
+           }
+         );
+         const articlesResponse3 = await axios.get(
+           `${process.env.REACT_APP_API_URL}/getSearchKeywordArticles`,
+           {
+             params: {
+               language: "english",
+               numOfArticles: 4,
+               searchWord: "",
+               skippedArticles: (currentPage - 1) * 10,
+             },
+           }
+         );
+         const articlesResponse4 = await axios.get(
+           `${process.env.REACT_APP_API_URL}/getTagArticles`,
+           {
+             params: {
+               language: "english",
+               numOfArticles: 4,
+               tagWord: articles.engTags,
+               skippedArticles: (currentPage - 1) * 10,
+             },
+           }
+         );
+         const articlesResponse5 = await axios.get(
+           `${process.env.REACT_APP_API_URL}/getAuthorArticles`,
+           {
+             params: {
+               language: "english",
+               numOfArticles: 4,
+               authorName: "Staff",
+               skippedArticles: (currentPage - 1) * 10,
+             },
+           }
+         );
 
-  const fetchArticles = async () => {
-    try {
-      const articlesResponse = await axios.get(
-        `${process.env.REACT_APP_API_URL}/getLatestArticles`,
-        {
-          params: {
-            language: "english",
-            numOfArticles: 4,
-            skippedArticles: (currentPage - 1) * 10,
-          },
-        }
-      );
+         const articlesWithFormattedDate = await Promise.all(
+           articlesResponse.data.map(async (article) => {
+             const imageResponse = await axios.get(
+               `${process.env.REACT_APP_API_URL}/getImage`,
+               {
+                 params: {
+                   imageID: article.images[0],
+                 },
+               }
+             );
 
-      const articlesWithFormattedDate = await Promise.all(
-        articlesResponse.data.map(async (article) => {
-          const imageResponse = await axios.get(
-            `${process.env.REACT_APP_API_URL}/getImage`,
-            {
-              params: {
-                imageID: article.images[0],
-              },
-            }
-          );
+             const decodedImage = imageResponse.data.imageBase64;
 
-          const decodedImage = imageResponse.data.imageBase64;
+             // Format the publication date
+             const options = { year: "numeric", month: "long", day: "numeric" };
+             const date = new Date(article.publicationDate);
+             const formattedDate = date.toLocaleDateString("en-US", options);
 
-          // Format the publication date
-          const options = { year: "numeric", month: "long", day: "numeric" };
-          const date = new Date(article.publicationDate);
-          const formattedDate = date.toLocaleDateString("en-US", options);
+             return {
+               ...article,
+               decodedImage,
+               formattedDate: `${formattedDate}`,
+             };
+           })
+         );
 
-          return {
-            ...article,
-            decodedImage,
-            formattedDate: `${formattedDate}`,
-          };
-        })
-      );
+         setArticles(articlesWithFormattedDate);
+       } catch (error) {
+         console.error("Error fetching articles:", error);
+       }
+     };
 
-      setArticles(articlesWithFormattedDate);
-    } catch (error) {
-      console.error("Error fetching articles:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchArticles();
-  }, [currentPage]);
+     useEffect(() => {
+       fetchArticles();
+      
+     }, [currentPage]);
 
   return (
     <div className="2xl:mx-auto my-[5%] 2xl:container  gap-7 ">
@@ -184,4 +220,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Apis;
