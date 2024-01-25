@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { BsSearch } from "react-icons/bs";
-
+import { Link } from "react-router-dom";
 const SearchArticles = () => {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
@@ -9,7 +9,7 @@ const SearchArticles = () => {
   const [showSearchPopup, setShowSearchPopup] = useState(false);
 
   const searchInputRef = useRef(null);
-
+ const [currentPage, setCurrentPage] = useState(1);
   const fetchArticles = async () => {
     try {
       const response = await axios.get(
@@ -23,6 +23,33 @@ const SearchArticles = () => {
         }
       );
 
+      const articlesWithFormattedDate = await Promise.all(
+        response.data.map(async (article) => {
+          const imageResponse = await axios.get(
+            `${process.env.REACT_APP_API_URL}/getImage`,
+            {
+              params: {
+                imageID: article.images[0],
+              },
+            }
+          );
+
+          const decodedImage = imageResponse.data.imageBase64;
+
+          // Format the publication date
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          const date = new Date(article.publicationDate);
+          const formattedDate = date.toLocaleDateString("en-US", options);
+
+          return {
+            ...article,
+            decodedImage,
+            formattedDate: `${formattedDate}`,
+          };
+        })
+      );
+
+      setArticles(articlesWithFormattedDate);
       if (Array.isArray(response.data)) {
         setArticles(response.data);
         setError(null);
@@ -73,18 +100,19 @@ const SearchArticles = () => {
         </span>
       </div>
       {showSearchPopup && (
-        <div className="search-popup absolute z-30 w-96 right-10 bg-white shadow-md p-5">
+        <div className="search-popup absolute z-30 w-[50%] right-10 bg-white shadow-md p-5">
           <form
             onSubmit={handleFormSubmit}
             className="flex justify-center items-center"
           >
             <input
               type="text"
-              className="bg-gray-100 p-2"
+              className="bg-gray-100 p-2 focus:border-none focus:outline-none"
               ref={searchInputRef}
               value={searchQuery}
               onChange={handleSearchInputChange}
             />
+
             <button
               className="text-white bg-[#c80000] px-3 py-2"
               type="button"
@@ -95,13 +123,33 @@ const SearchArticles = () => {
           </form>
           <div>
             {error && <p>{error}</p>}
-            {articles.length > 0 ? (
-              articles.map((article) => (
-                <div key={article._id}>
-                  <h3>{article.engHeading}</h3>
+            <div className="grid grid-cols-1  rounded-lg">
+              {articles.map((article) => (
+                <div
+                  key={article._id}
+                  className=" py-4 px-2 gap-3 flex justify-between"
+                >
+                  <div className="bg-white ">
+                    <Link
+                      to={`/news/${article._id}`}
+                      className="text-black hover:text-[#c80000]  font-bold "
+                    >
+                      <p className=" mt-2 font-bold italic ">
+                        {article.engHeading}{" "}
+                      </p>
+                     
+                    </Link>
+                  </div>
+                  {article.decodedImage && (
+                    <img
+                      src={`data:image/jpeg;base64,${article.decodedImage}`}
+                      alt={`Image ${article.filename}`}
+                      className="object-cover w-20 h-24 "
+                    />
+                  )}
                 </div>
-              ))
-            ) : ""}
+              ))}
+            </div>
           </div>
         </div>
       )}
