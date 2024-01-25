@@ -156,7 +156,7 @@ const LatestTechnology = () => {
             Lifestyle
           </h1>
           {articles.map((article) => (
-            <Link to={`/news/${article._id}`} key={article._id}>
+            <Link to={`/${article._id}`} key={article._id}>
               <div>
                 <div className="relative mx-2 overflow-hidden">
                   {article.decodedImage && (
@@ -197,7 +197,7 @@ const LatestTechnology = () => {
           </h1>{" "}
           {articlesEntnmntStories.map((article) => (
             <div
-              to={`/news/${article._id}`}
+              to={`/${article._id}`}
               key={article._id}
               className=" gap-5 space-y-5"
             >
@@ -228,7 +228,7 @@ const LatestTechnology = () => {
           ))}
           {articles1.map((article) => (
             <div
-              to={`/news/${article._id}`}
+              to={`/${article._id}`}
               key={article._id}
               className="flex gap-5 space-y-5"
             >
@@ -276,7 +276,7 @@ const LatestTechnology = () => {
                       {article.engCategories && article.engCategories[0]}
                     </p>
                     <Link
-                      to={`/news/${article._id}`}
+                      to={`/${article._id}`}
                       className="text-black hover:text-[#c80000]  font-bold text-justify"
                     >
                       {article.engHeading}
@@ -313,7 +313,7 @@ const LatestTechnology = () => {
                       {article.engCategories && article.engCategories[0]}
                     </p>
                     <Link
-                      to={`/news/${article._id}`}
+                      to={`/${article._id}`}
                       className="text-black hover:text-[#c80000]  font-bold text-justify"
                     >
                       {article.engHeading}

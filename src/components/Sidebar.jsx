@@ -72,7 +72,7 @@ const Sidebar = () => {
             Global News
           </h1>
           {articles.map((article) => (
-            <Link to={`/news/${article._id}`} key={article._id}>
+            <Link to={`/${article._id}`} key={article._id}>
               <div>
                 <div className="relative mx-2 overflow-hidden">
                   {article.decodedImage && (
@@ -114,7 +114,7 @@ const Sidebar = () => {
           {articles.map((article) => (
             <div className="flex gap-5 space-y-5">
               <Link
-                to={`/news/${article._id}`}
+                to={`/${article._id}`}
                 key={article._id}
                 className="relative pt-10 w-full h-full"
               >
@@ -157,7 +157,7 @@ const Sidebar = () => {
               >
                 <div className="bg-white ">
                   <Link
-                    to={`/news/${article._id}`}
+                    to={`/${article._id}`}
                     className="text-black hover:text-[#c80000]  font-bold "
                   >
                     <p className=" mt-2 font-bold italic ">

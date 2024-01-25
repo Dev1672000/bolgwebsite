@@ -103,7 +103,7 @@ const LatestStories = () => {
       <div className="md:px-16 px-4 my-5 container mx-auto">
         <div className=" px-0 grid grid-cols-2 md:grid-cols-3 gap-4">
           {articles.map((article) => (
-            <div to={`/news/${article._id}`} key={article._id}>
+            <div to={`/${article._id}`} key={article._id}>
               <div className="relative  py-3 w-full">
                 {article.decodedImage && (
                   <img

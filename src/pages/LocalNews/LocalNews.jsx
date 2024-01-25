@@ -94,7 +94,7 @@ const LocalNews = () => {
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {articles.map((article) => (
-          <Link to={`/news/${article._id}`} key={article._id}>
+          <Link to={`/${article._id}`} key={article._id}>
             <div className="border p-4 cursor-pointer">
               {/* Displaying image with ngCategories */}
               <div className="relative mb-2">

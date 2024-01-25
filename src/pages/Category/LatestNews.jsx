@@ -71,7 +71,7 @@ const LatestNews = () => {
           >
             <div className="bg-white ">
               <Link
-                to={`/news/${article._id}`}
+                to={`/${article._id}`}
                 className="text-black hover:text-[#c80000]  font-bold "
               >
                 <p className=" mt-2 font-bold italic ">{article.engHeading} </p>

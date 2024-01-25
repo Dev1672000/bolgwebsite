@@ -129,13 +129,13 @@ const DetailedArticles = ({ shareUrl, title }) => {
     <div>
       <div className="">
         {articles.map((article) => (
-          <div to={`/news/${article._id}`} key={article._id} className="">
+          <div to={`/${article._id}`} key={article._id} className="">
             <div>
               <span className="bg-[#029fb2] uppercase text-[10px] text-white p-1">
                 {article.engCategories && article.engCategories[0]}
               </span>
               <p className="text-3xl font-bold">{article.engHeading}</p>
-              <div className="flex justify-between items-center">
+              <div className="md:flex justify-between items-center">
               <span className="italic">
                 {`${article.author} - ${article.formattedDate}`}
               </span>

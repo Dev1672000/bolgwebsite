@@ -73,7 +73,7 @@ const CategorySports = () => {
     <div className="">
       {articles.map((article) => (
         <div
-          to={`/news/${article._id}`}
+          to={`/${article._id}`}
           key={article._id}
           className="flex gap-5 space-y-5"
         >

@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/:articleId" element={<ShowDetailedArticle />} />
-        <Route path="news/:articleId" element={<ShowDetailedArticle />} />
-        <Route path="/Category/:articleId" element={<CategorySports />} />
+        {/* <Route path="news/:articleId" element={<ShowDetailedArticle />} /> */}
+        {/* <Route path="/Category/:articleId" element={<CategorySports />} /> */}
       </Routes>
 
       <Footer />

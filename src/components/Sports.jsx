@@ -113,7 +113,7 @@ const Sports = () => {
       <div className="md:flex gap-5">
         <div className="md:w-[40%]  ">
           {articles.map((article) => (
-            <div to={`/news/${article._id}`} key={article._id}>
+            <div to={`/${article._id}`} key={article._id}>
               <div className="relative -mt-5 md:-mt-9 w-full h-full">
                 {article.decodedImage && (
                   <img
@@ -145,7 +145,7 @@ const Sports = () => {
           <div className="md:mb-12 px-0 grid grid-cols-2 md:grid-cols-2 gap-4">
             {" "}
             {articlesBusinessFinance.map((article) => (
-              <div to={`/news/${article._id}`} key={article._id}>
+              <div to={`/${article._id}`} key={article._id}>
                 <div className="relative   w-full">
                   {" "}
                   {article.decodedImage && (

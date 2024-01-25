@@ -131,7 +131,7 @@ const HomeMain = () => {
         <div className="lg:ml-6 lg:mt-0 mt-7  gap-5 lg:w-[20%] w-full flex lg:flex-col sm:flex-row flex-col items-center ">
           {articlesBusinessFinance.map((article) => (
             <div className="" key={article._id}>
-              <Link to={`/news/${article._id}`}>
+              <Link to={`/${article._id}`}>
                 <div className="relative overflow-hidden">
                   {article.decodedImage && (
                     <img
@@ -163,7 +163,7 @@ const HomeMain = () => {
             </h1>{" "}
             {articlesBusinessFinance.map((article) => (
               <div
-                to={`/news/${article._id}`}
+                to={`/${article._id}`}
                 key={article._id}
                 className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center"
               >
@@ -190,7 +190,7 @@ const HomeMain = () => {
               </h1>
               {articlesBusinessFinance.map((article) => (
                 <div
-                  to={`/news/${article._id}`}
+                  to={`/${article._id}`}
                   key={article._id}
                   className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center"
                 >

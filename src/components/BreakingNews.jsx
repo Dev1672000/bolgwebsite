@@ -72,7 +72,7 @@ const navigate=useNavigate()
       <Swiper {...swiperParams} ref={swiperRef} className="md:w-[75%]">
         {articles.map((article) => (
           <SwiperSlide key={article._id}>
-            <Link to={`/news/${article._id}`}>{article.engHeading}</Link>
+            <Link to={`/${article._id}`}>{article.engHeading}</Link>
           </SwiperSlide>
         ))}
       </Swiper>
