@@ -21,6 +21,8 @@ import LatestNews from "../Category/LatestNews";
 const DetailedArticles = ({ shareUrl, title }) => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  
+  const [activeTag, setActiveTag] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -121,7 +123,6 @@ const DetailedArticles = ({ shareUrl, title }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your comment submission logic here
     console.log("Comment submitted:", formData);
   };
 
@@ -136,60 +137,60 @@ const DetailedArticles = ({ shareUrl, title }) => {
               </span>
               <p className="text-3xl font-bold">{article.engHeading}</p>
               <div className="md:flex justify-between items-center">
-              <span className="italic">
-                {`${article.author} - ${article.formattedDate}`}
-              </span>
-              <div className="flex gap-3 justify-center items-center">
-                <div className="flex p-3 gap-2 border-gray-200  justify-center items-center border-[1px]">
-                  <FaShareAlt />
-                  <span className="text-gray-200">|</span>
-                  <div className="">Share</div>
+                <span className="text-xs  italic text-gray-500">
+                  {`${article.author} - ${article.formattedDate}`}
+                </span>
+                <div className="flex gap-3 justify-center items-center">
+                  <div className="flex p-3 gap-2 border-gray-200  justify-center items-center border-[1px]">
+                    <FaShareAlt />
+                    <span className="text-gray-200">|</span>
+                    <div className="">Share</div>
+                  </div>
+                  <Link
+                    className="bg-[#516eab] text-white p-3"
+                    to={facebookShareUrl}
+                    title="Facebook"
+                  >
+                    <FaFacebook />
+                  </Link>
+                  <Link
+                    className="bg-[#29c5f6] text-white p-3"
+                    to={twitterShareUrl}
+                    title="Twitter"
+                  >
+                    <FaTwitter />
+                  </Link>
+                  <Link
+                    className="bg-[#ca212a] text-white p-3"
+                    to={pinterestShareUrl}
+                    title="Pinterest"
+                  >
+                    {" "}
+                    <FaPinterest />
+                  </Link>
+                  <Link
+                    className="bg-[#7bbf6a] text-white p-3"
+                    to={whatsappShareUrl}
+                    title="WhatsApp"
+                  >
+                    {" "}
+                    <FaWhatsapp />
+                  </Link>
+                  <Link
+                    className="bg-[#333] text-white p-3 "
+                    to="#"
+                    title="Print"
+                    onClick={handlePrint}
+                  >
+                    <FaPrint />
+                  </Link>
                 </div>
-                <Link
-                  className="bg-[#516eab] text-white p-3"
-                  to={facebookShareUrl}
-                  title="Facebook"
-                >
-                  <FaFacebook />
-                </Link>
-                <Link
-                  className="bg-[#29c5f6] text-white p-3"
-                  to={twitterShareUrl}
-                  title="Twitter"
-                >
-                  <FaTwitter />
-                </Link>
-                <Link
-                  className="bg-[#ca212a] text-white p-3"
-                  to={pinterestShareUrl}
-                  title="Pinterest"
-                >
-                  {" "}
-                  <FaPinterest />
-                </Link>
-                <Link
-                  className="bg-[#7bbf6a] text-white p-3"
-                  to={whatsappShareUrl}
-                  title="WhatsApp"
-                >
-                  {" "}
-                  <FaWhatsapp />
-                </Link>
-                <Link
-                  className="bg-[#333] text-white p-3 "
-                  to="#"
-                  title="Print"
-                  onClick={handlePrint}
-                >
-                  <FaPrint />
-                </Link>
-              </div>
               </div>
             </div>
 
             <div>
               {article.imageContentPairs.map((pair, index) => (
-                <React.Fragment key={index}>
+                <div key={index}>
                   <div className="relative pt-5 w-full h-full">
                     {pair.decodedImage && (
                       <img
@@ -199,21 +200,28 @@ const DetailedArticles = ({ shareUrl, title }) => {
                       />
                     )}
                   </div>
-                  <div className="p-2">
-                    <p className="text-gray-500">{pair.content}</p>
+                  <div className="">
+                    <p className="text-gray-500 text-justify">{pair.content}</p>
                   </div>
-                </React.Fragment>
-              ))}
-            </div>
-            <div>
-              {article.engTags.map((tag, index) => (
-                <div key={index}>
-                  <span className="bg-[#029fb2]  uppercase text-[10px] text-white p-1">
-                    {" "}
-                    {tag}
-                  </span>
                 </div>
               ))}
+            </div>
+            <div className="flex">
+              <div className="flex flex-wrap content-center items-center text-center">
+                {article.engTags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className={`${
+                      activeTag === tag
+                        ? "bg-[#029fb2] p-1 text-center text-white"
+                        : "border-[1px] m-1 p-1 text-gray-700"
+                    } uppercase text-[10px]  cursor-pointer`}
+                    onClick={() => setActiveTag(tag)}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
               <div className="flex gap-3 justify-center items-center">
                 <div className="flex p-3 gap-2 border-gray-200  justify-center items-center border-[1px]">
                   <FaShareAlt />
@@ -274,7 +282,7 @@ const DetailedArticles = ({ shareUrl, title }) => {
                     type="text"
                     id="comment"
                     name="comment"
-                    className="mt-1 p-2 w-full border rounded-md"
+                    className="mt-1 p-2 outline-none w-full border rounded-md"
                     placeholder="Comment:"
                     value={formData.name}
                     onChange={handleChange}
@@ -287,7 +295,7 @@ const DetailedArticles = ({ shareUrl, title }) => {
                       type="text"
                       id="name"
                       name="name"
-                      className="mt-1 p-2 w-full border rounded-md"
+                      className="mt-1 outline-none p-2 w-full border rounded-md"
                       placeholder="Your Name :*"
                       value={formData.name}
                       onChange={handleChange}
@@ -299,7 +307,7 @@ const DetailedArticles = ({ shareUrl, title }) => {
                       type="email"
                       id="email"
                       name="email"
-                      className="mt-1 p-2 w-full border rounded-md"
+                      className="mt-1 outline-none p-2 w-full border rounded-md"
                       placeholder="Your Email :*"
                       value={formData.email}
                       onChange={handleChange}
@@ -311,7 +319,7 @@ const DetailedArticles = ({ shareUrl, title }) => {
                       type="url"
                       id="website"
                       name="website"
-                      className="mt-1 p-2 w-full border rounded-md"
+                      className="mt-1 outline-none p-2 w-full border rounded-md"
                       placeholder="Your Website:"
                       value={formData.website}
                       onChange={handleChange}
@@ -328,7 +336,7 @@ const DetailedArticles = ({ shareUrl, title }) => {
                       checked={formData.saveInfo}
                       onChange={handleChange}
                     />
-                    <span className="text-sm text-gray-950 font-medium">
+                    <span className="text-sm text-gray-500 font-medium">
                       Save my name, email, and website in this browser for the
                       next time I comment.
                     </span>

@@ -90,8 +90,8 @@ const Sidebar = () => {
                   </div>
                 </div>
 
-                <div className="bg-white p-4">
-                  <h1 className=" hover:text-[#c80000]  font-bold ">
+                <div className="bg-white p-2">
+                  <h1 className=" hover:text-[#c80000] text-sm text-justify font-bold ">
                     {article.engHeading}
                     {/* {item.link} */}
                   </h1>
@@ -134,11 +134,13 @@ const Sidebar = () => {
               </Link>
 
               <div className="border-t-[1px] p-2 ">
-                <p className="font-bold md:text-xl">{article.engHeading}</p>
-                <span className="text-[14px] italic">
+                <p className="font-bold md:text-xl text-sm text-justify hover:text-[#C80000]">
+                  {article.engHeading}
+                </p>
+                <span className="text-xs mt-2 italic text-gray-500">
                   {`${article.author} - ${article.formattedDate}`}
                 </span>
-                <p className="text-gray-500 md:block hidden">
+                <p className="text-gray-500 text-justify md:block hidden">
                   {article.engContent[0]}
                 </p>
               </div>
@@ -160,10 +162,10 @@ const Sidebar = () => {
                     to={`/${article._id}`}
                     className="text-black hover:text-[#c80000]  font-bold "
                   >
-                    <p className=" mt-2 font-bold italic ">
+                    <p className=" mt-2 font-bold text-sm text-justify  hover:text-[#C80000]">
                       {article.engHeading}{" "}
                     </p>
-                    <p className="text-xs mt-2 italic text-gray-500">
+                    <p className="text-xs mt-2 italic font-normal text-gray-500">
                       {`${article.author} - ${article.formattedDate}`}
                     </p>
                   </Link>

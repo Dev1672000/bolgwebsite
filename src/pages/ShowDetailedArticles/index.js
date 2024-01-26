@@ -1,7 +1,7 @@
-import React from 'react'
-import LatestNews from '../Category/LatestNews'
-import DetailedArticles from './DetailedArticles'
-import LocalNewsDetailed from "../LocalNews/LocalNewsDetailed"
+import React from "react";
+import LatestNews from "../Category/LatestNews";
+import DetailedArticles from "./DetailedArticles";
+import LocalNewsDetailed from "../LocalNews/LocalNewsDetailed";
 
 const Index = () => {
   return (
@@ -9,11 +9,15 @@ const Index = () => {
       <div className="md:w-[70%]">
         <DetailedArticles />
       </div>
-      <div className="md:w-[25%]">
-        <LatestNews />
+      <div className="md:w-[25%] md:flex-shrink-0">
+        {" "}
+        <div className="sticky top-16">
+          {" "}
+          <LatestNews />
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default Index
+export default Index;

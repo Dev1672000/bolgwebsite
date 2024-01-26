@@ -103,7 +103,7 @@ const LatestStories = () => {
       <div className="md:px-16 px-4 my-5 container mx-auto">
         <div className=" px-0 grid grid-cols-2 md:grid-cols-3 gap-4">
           {articles.map((article) => (
-            <div to={`/${article._id}`} key={article._id}>
+            <Link to={`/${article._id}`} key={article._id}>
               <div className="relative  py-3 w-full">
                 {article.decodedImage && (
                   <img
@@ -119,14 +119,14 @@ const LatestStories = () => {
                   </h1>
                 </div>
               </div>
-              <h1 className="  font-bold md:text-[16px] text-[14px] mt-1">
+              <h1 className="hover:text-[#C80000] text-justify font-bold md:text-[16px] text-[14px] mt-1">
                 {article.engHeading}
               </h1>
-              <p className="text-gray-600 md:pl-2  text-sm mt-1">
+              <p className="text-xs mt-2 italic text-gray-500">
                 {" "}
                 {`${article.author} - ${article.formattedDate}`}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
         <Swiper {...swiperParams} ref={swiperRef}>

@@ -219,17 +219,7 @@ const menuItems = [
   {
     title: "More",
     link: "/",
-    subMenu: [
-      {
-        title: "Opinion",
-      },
-      {
-        title: "Environnment",
-      },
-      {
-        title: "Science ET Tech",
-      },
-    ],
+    subMenu: [],
   },
 ];
 
@@ -253,7 +243,7 @@ const SubMenuItem = ({
     >
       <Link
         to={link}
-        className="flex flex-col items-center justify-between p-2 rounded"
+        className="flex flex-col text-justify justify-between p-2 rounded"
       >
         <div className="relative w-full">
           <img
@@ -266,7 +256,9 @@ const SubMenuItem = ({
           </div>
         </div>
         <h1>{title}</h1>
-        <span className="text-[11px] italic">{postDate}</span>
+        <span className="text-xs mt-2 font-normal  italic text-gray-500">
+          {postDate}
+        </span>
       </Link>
     </div>
   );
@@ -386,13 +378,16 @@ const NavbarBottom = () => {
     >
       <div className="max-w-screen-xl ml-[5%]">
         <div className="flex justify-between items-center">
-          <img
-            className={`logo w-32 transition-opacity ${
-              isScrolled ? "opacity-100" : "hidden opacity-0"
-            }`}
-            src={Images.Logo}
-            alt="Logo"
-          />
+          <Link to="/">
+            {" "}
+            <img
+              className={`logo w-32 transition-opacity ${
+                isScrolled ? "opacity-100" : "hidden opacity-0"
+              }`}
+              src={Images.Logo}
+              alt="Logo"
+            />
+          </Link>
 
           <ul className="flex font-bold space-x-7">
             {menuItems.map((item) => (

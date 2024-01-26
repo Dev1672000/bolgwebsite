@@ -72,33 +72,37 @@ const NavBarWeb = () => {
         <div className="flex text-[11px] ml-7 text-white gap-3">
           <p>Download The App:</p>
           <ul className="flex justify-center items-center gap-3">
-            <li>
+            <Link to={`https://apps.apple.com/us/app/le-matinal/id1573438989`}>
               <FaApple />
-            </li>
-            <li>
+            </Link>
+            <Link
+              to={`https://play.google.com/store/apps/details?id=com.lematinal`}
+            >
               <FaPlay />
-            </li>
+            </Link>
           </ul>
         </div>
         <div className="flex items-center text-white ml-auto gap-4">
           <ul className="flex gap-3 justify-center">
             <li>
-              <Link to="https://www.facebook.com/">
+              <Link to={`https://www.facebook.com/lematinalmedia`}>
                 <FaFacebook />
               </Link>
             </li>
             <li>
-              <Link to="https://www.instagram.com/">
+              <Link to={`https://www.instagram.com/lematinal_media/`}>
                 <FaInstagram />
               </Link>
             </li>
             <li>
-              <Link to="https://twitter.com/">
+              <Link to={`https://twitter.com/lematinal_media`}>
                 <FaXTwitter />
               </Link>
             </li>
             <li>
-              <Link to="https://www.youtube.com/">
+              <Link
+                to={`https://www.youtube.com/channel/UC1lu1c_4zbhOuneNIq4Qmug`}
+              >
                 <FaYoutube />
               </Link>
             </li>
@@ -106,7 +110,13 @@ const NavBarWeb = () => {
         </div>
         <div className="flex text-[11px] justify-center items-center ml-7">
           <p>
-            <Link to="https://lematinal.media/"> Read in French </Link>
+            <Link
+              to="https://lematinal.media/"
+              className="hover:text-[#C80000]"
+            >
+              {" "}
+              Read in French{" "}
+            </Link>
           </p>
           <FaLongArrowAltRight size={18} className="ml-1" />
         </div>

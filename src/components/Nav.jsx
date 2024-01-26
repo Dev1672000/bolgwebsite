@@ -390,7 +390,7 @@ const Nav = () => {
   return (
     <nav className="bg-white border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={EffectualLogo} alt="Logo" width={180} className="rounded" />
         </Link>
         <div className="hidden md:block">

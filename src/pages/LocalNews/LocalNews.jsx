@@ -116,7 +116,7 @@ const LocalNews = () => {
               </p>
 
               {/* Displaying engHeading */}
-              <h3 className="text-lg font-semibold mt-2">
+              <h3 className="text-lg font-semibold mt-2 hover:text-[#C80000]">
                 {article.engHeading}
               </h3>
             </div>

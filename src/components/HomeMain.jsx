@@ -109,8 +109,10 @@ const HomeMain = () => {
               <span className="bg-[#029fb2] uppercase text-[10px] text-white p-1">
                 {article.engCategories && article.engCategories[0]}
               </span>
-              <p className="text-3xl font-bold">{article.engHeading}</p>
-              <span className="italic">
+              <p className="text-3xl font-bold  hover:text-[#C80000]">
+                {article.engHeading}
+              </p>
+              <span className="text-xs mt-2 italic text-gray-500">
                 {" "}
                 {`${article.author} - ${article.formattedDate}`}
               </span>
@@ -147,8 +149,10 @@ const HomeMain = () => {
                   </div>
                 </div>
 
-                <p className="font-bold">{article.engHeading}</p>
-                <span className="italic text-[14px]">
+                <p className="font-bold text-sm text-justify hover:text-[#C80000]">
+                  {article.engHeading}
+                </p>
+                <span className="text-xs mt-2 italic text-gray-500">
                   {`${article.author} - ${article.formattedDate}`}
                 </span>
               </Link>
@@ -162,16 +166,16 @@ const HomeMain = () => {
               Editor Picks
             </h1>{" "}
             {articlesBusinessFinance.map((article) => (
-              <div
+              <Link
                 to={`/${article._id}`}
                 key={article._id}
                 className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center"
               >
                 <div className="space-y-2">
-                  <p className="font-bold  hover:text-[#C80000]">
+                  <p className="font-bold text-sm text-justify hover:text-[#C80000]">
                     {article.engHeading}
                   </p>
-                  <p className="text-xs italic text-gray-600">
+                  <p className="text-xs mt-2 italic text-gray-500">
                     {`${article.author} - ${article.formattedDate}`}
                   </p>
                 </div>
@@ -179,26 +183,26 @@ const HomeMain = () => {
                   <img
                     src={`data:image/jpeg;base64,${article.decodedImage}`}
                     alt={`Image ${article.filename}`}
-                    className="h-20 w-20 rounded-full object-cover "
+                    className="h-20 ml-2 w-20 rounded-full object-cover "
                   />
                 )}
-              </div>
+              </Link>
             ))}
             <div>
               <h1 className="text-[#C80000] mb-5 text-[18px] font-bold">
                 Business & Finance
               </h1>
               {articlesBusinessFinance.map((article) => (
-                <div
+                <Link
                   to={`/${article._id}`}
                   key={article._id}
                   className=" mx-auto   pb-2 flex sm:mx-auto mb-2 items-center"
                 >
                   <div className="space-y-2">
-                    <p className="font-bold  hover:text-[#C80000]">
+                    <p className="font-bold text-sm text-justify hover:text-[#C80000]">
                       {article.engHeading}
                     </p>
-                    <p className="text-xs italic text-gray-600">
+                    <p className="text-xs mt-2 italic text-gray-500">
                       {`${article.author} - ${article.formattedDate}`}
                     </p>
                   </div>
@@ -206,10 +210,10 @@ const HomeMain = () => {
                     <img
                       src={`data:image/jpeg;base64,${article.decodedImage}`}
                       alt={`Image ${article.filename}`}
-                      className="h-20 w-20 rounded-full object-cover "
+                      className="h-20 w-20 ml-5 rounded-full object-cover "
                     />
                   )}
-                </div>
+                </Link>
               ))}
             </div>
           </div>

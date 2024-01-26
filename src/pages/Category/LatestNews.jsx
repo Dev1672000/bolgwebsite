@@ -74,8 +74,10 @@ const LatestNews = () => {
                 to={`/${article._id}`}
                 className="text-black hover:text-[#c80000]  font-bold "
               >
-                <p className=" mt-2 font-bold italic ">{article.engHeading} </p>
-                <p className="text-xs mt-2 italic text-gray-500">
+                <p className=" mt-2 font-bold  hover:text-[#C80000]">
+                  {article.engHeading}{" "}
+                </p>
+                <p className="text-xs mt-2 italic font-normal text-gray-500">
                   {`${article.author} - ${article.formattedDate}`}
                 </p>
               </Link>

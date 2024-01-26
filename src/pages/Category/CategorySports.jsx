@@ -72,7 +72,7 @@ const CategorySports = () => {
   return (
     <div className="">
       {articles.map((article) => (
-        <div
+        <Link
           to={`/${article._id}`}
           key={article._id}
           className="flex gap-5 space-y-5"
@@ -93,7 +93,10 @@ const CategorySports = () => {
           </div>
 
           <div className="border-t-[1px] p-2 ">
-            <p className="font-bold md:text-xl"> {article.engHeading}</p>
+            <p className="font-bold md:text-xl hover:text-[#C80000]">
+              {" "}
+              {article.engHeading}
+            </p>
             <span className="text-[14px] italic">
               {`${article.author} - ${article.formattedDate}`}
             </span>
@@ -101,7 +104,7 @@ const CategorySports = () => {
               {article.engContent[0]}
             </p>
           </div>
-        </div>
+        </Link>
       ))}
       <div className="text-[20px] text-[#029fb2] flex ">
         <MdOutlineKeyboardArrowLeft

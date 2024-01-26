@@ -174,8 +174,8 @@ const LatestTechnology = () => {
                   </div>
                 </div>
 
-                <div className="bg-white p-4">
-                  <h1 className=" hover:text-[#c80000]  font-bold ">
+                <div className="bg-white p-2">
+                  <h1 className=" hover:text-[#c80000] text-sm font-bold ">
                     {article.engHeading}
                     {/* {item.link} */}
                   </h1>
@@ -196,11 +196,7 @@ const LatestTechnology = () => {
             Entertainment Stories
           </h1>{" "}
           {articlesEntnmntStories.map((article) => (
-            <div
-              to={`/${article._id}`}
-              key={article._id}
-              className=" gap-5 space-y-5"
-            >
+            <div key={article._id} className=" gap-5 space-y-5">
               <div className="relative pt-10 w-full h-full">
                 {article.decodedImage && (
                   <img
@@ -217,17 +213,21 @@ const LatestTechnology = () => {
                 </div>
               </div>
 
-              <div className=" p-2">
-                <p className="font-bold md:text-xl">{article.engHeading}</p>
-                <span className="text-[14px] italic">
+              <Link to={`/${article._id}`} className=" p-2">
+                <p className="font-bold md:text-xl hover:text-[#c80000] text-sm">
+                  {article.engHeading}
+                </p>
+                <span className="text-xs mt-2 italic text-gray-500">
                   {`${article.author} - ${article.formattedDate}`}
                 </span>
-                <p className="text-gray-500">{article.engContent[0]}</p>
-              </div>
+                <p className="text-gray-500 text-justify">
+                  {article.engContent[0]}
+                </p>
+              </Link>
             </div>
           ))}
           {articles1.map((article) => (
-            <div
+            <Link
               to={`/${article._id}`}
               key={article._id}
               className="flex gap-5 space-y-5"
@@ -248,15 +248,18 @@ const LatestTechnology = () => {
               </div>
 
               <div className="border-t-[1px] p-2 ">
-                <p className="font-bold md:text-xl"> {article.engHeading}</p>
-                <span className="text-[14px] italic">
+                <p className="font-bold md:text-xl hover:text-[#c80000] text-sm">
+                  {" "}
+                  {article.engHeading}
+                </p>
+                <span className="text-xs mt-2 italic text-gray-500">
                   {`${article.author} - ${article.formattedDate}`}
                 </span>
-                <p className="text-gray-500 md:block hidden ">
+                <p className="text-gray-500 text-justify md:block hidden ">
                   {article.engContent[0]}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className=" space-y-9 border-gray-100    md:w-[25%] ">
@@ -271,10 +274,6 @@ const LatestTechnology = () => {
                   className=" py-4 px-2 gap-3 flex justify-between"
                 >
                   <div className="bg-white ">
-                    <p className="uppercase text-gray-500">
-                      {" "}
-                      {article.engCategories && article.engCategories[0]}
-                    </p>
                     <Link
                       to={`/${article._id}`}
                       className="text-black hover:text-[#c80000]  font-bold text-justify"
@@ -308,10 +307,6 @@ const LatestTechnology = () => {
                   className=" py-4 px-2 gap-3 flex justify-between"
                 >
                   <div className="bg-white ">
-                    <p className="uppercase text-gray-500">
-                      {" "}
-                      {article.engCategories && article.engCategories[0]}
-                    </p>
                     <Link
                       to={`/${article._id}`}
                       className="text-black hover:text-[#c80000]  font-bold text-justify"

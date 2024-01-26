@@ -113,8 +113,8 @@ const Sports = () => {
       <div className="md:flex gap-5">
         <div className="md:w-[40%]  ">
           {articles.map((article) => (
-            <div to={`/${article._id}`} key={article._id}>
-              <div className="relative -mt-5 md:-mt-9 w-full h-full">
+            <Link to={`/${article._id}`} key={article._id}>
+              <div className="relative  -mt-5 md:-mt-9 ">
                 {article.decodedImage && (
                   <img
                     src={`data:image/jpeg;base64,${article.decodedImage}`}
@@ -129,23 +129,21 @@ const Sports = () => {
                 </div>
               </div>
 
-              <h1 className="pl-7  font-bold text-3xl mt-3">
-                Cycling : African Track
-              </h1>
-              <h1 className=" pl-7 font-bold text-3xl ">
-                Championships : Samuel Dupuy Rolls On Gold
-              </h1>
-              <p className="text-gray-600 pl-7  text-sm mt-3">
-                {`${article.author} - ${article.formattedDate}`}
-              </p>
-            </div>
+              <div className="pl-5 mt-3 hover:text-[#c80000] font-bold text-3xl">
+                <h1>Cycling : African Track</h1>
+                <h1>Championships : Samuel Dupuy Rolls On Gold</h1>
+                <p className="text-xs mt-2 italic text-gray-500 font-normal">
+                  {`${article.author} - ${article.formattedDate}`}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
         <div className="md:w-[60%] mt-5">
           <div className="md:mb-12 px-0 grid grid-cols-2 md:grid-cols-2 gap-4">
             {" "}
             {articlesBusinessFinance.map((article) => (
-              <div to={`/${article._id}`} key={article._id}>
+              <Link to={`/${article._id}`} key={article._id}>
                 <div className="relative   w-full">
                   {" "}
                   {article.decodedImage && (
@@ -162,14 +160,14 @@ const Sports = () => {
                     </h1>
                   </div>
                 </div>
-                <h1 className=" pl-2 font-bold text-sm mt-3">
+                <h1 className="  font-bold text-sm mt-3 hover:text-[#C80000]">
                   {article.engHeading}
                 </h1>
-                <p className="text-gray-600 pl-2  text-sm mt-3">
+                <p className="text-xs mt-2 italic text-gray-500">
                   {" "}
                   {`${article.author} - ${article.formattedDate}`}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
